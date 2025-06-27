@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->text('description');
             $table->decimal('price', 10, 2);
             $table->integer('stock_quantity');
-            $table->string('unit'); // ví dụ: kg, bó, gói
+            $table->string('unit'); // ví dụ: kg, bó, gói,...
             $table->text('image_url')->nullable();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();

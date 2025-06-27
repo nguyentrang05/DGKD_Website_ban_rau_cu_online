@@ -40,7 +40,6 @@ class UserSeeder extends Seeder
             'role' => 'user',
         ]);
 
-        // Tạo thêm 10 người dùng ngẫu nhiên
-        // User::factory()->count(10)->create();
+        
     }
 }

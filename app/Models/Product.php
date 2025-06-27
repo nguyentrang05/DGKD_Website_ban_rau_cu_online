@@ -9,11 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+   
     protected $fillable = [
         'name',
         'slug',
@@ -25,34 +21,22 @@ class Product extends Model
         'category_id',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+    
     protected $casts = [
         'price' => 'decimal:2',
     ];
-
-    /**
-     * Get the category that owns the product.
-     */
+    //Một sản phẩm thuộc về 1 danh mục
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
-
-    /**
-     * Get the cart items for the product.
-     */
+    //Một sản phẩm nằm trong nhiều mục giỏ hàng
     public function cartItems()
     {
         return $this->hasMany(CartItem::class);
     }
 
-    /**
-     * Get the order items for the product.
-     */
+    //Một sản phẩm nằm trong nhiều mục đơn hàng
     public function orderItems()
     {
         return $this->hasMany(OrderItem::class);

@@ -200,23 +200,6 @@
                                     </button>
                                 </div>
                             @endforeach
-                        @else
-                            <!-- Fallback nếu không có sản phẩm gợi ý -->
-                            @for($i = 1; $i <= 3; $i++)
-                                <div class="d-flex align-items-center mb-2 p-2 border rounded">
-                                    <img src="{{ asset('images/products/sample-' . $i . '.jpg') }}"
-                                         alt="Sản phẩm gợi ý"
-                                         class="me-2 rounded"
-                                         style="width: 40px; height: 40px; object-fit: cover;">
-                                    <div class="flex-grow-1">
-                                        <p class="mb-0 small">Rau củ tươi ngon</p>
-                                        <p class="mb-0 small text-success fw-bold">25.000đ</p>
-                                    </div>
-                                    <button class="btn btn-outline-success btn-sm">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
-                            @endfor
                         @endif
                     </div>
                 </div>
@@ -239,69 +222,12 @@
                         Mua sắm ngay
                     </a>
                 </div>
-
-                <!-- Danh mục nổi bật -->
-                <div class="row mt-5">
-                    <div class="col-12">
-                        <h5 class="text-center mb-4">Danh mục nổi bật</h5>
-                    </div>
-                    @if(isset($featuredCategories) && $featuredCategories->count() > 0)
-                        @foreach($featuredCategories as $category)
-                            <div class="col-md-4 mb-3">
-                                <div class="card h-100 border-0 shadow-sm">
-                                    <div class="card-body text-center">
-                                        <div class="mb-3">
-                                            <i class="fas fa-{{ $category->icon ?? 'leaf' }} text-success" style="font-size: 3rem;"></i>
-                                        </div>
-                                        <h6>{{ $category->name }}</h6>
-                                        <a href="{{ route('products.index', ['category' => $category->id]) }}" class="btn btn-outline-success btn-sm">Xem thêm</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    @else
-                        <!-- Fallback categories -->
-                        <div class="col-md-4 mb-3">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body text-center">
-                                    <div class="mb-3">
-                                        <i class="fas fa-carrot text-warning" style="font-size: 3rem;"></i>
-                                    </div>
-                                    <h6>Rau củ tươi</h6>
-                                    <a href="{{ route('products.index') }}" class="btn btn-outline-success btn-sm">Xem thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body text-center">
-                                    <div class="mb-3">
-                                        <i class="fas fa-apple-alt text-danger" style="font-size: 3rem;"></i>
-                                    </div>
-                                    <h6>Trái cây tươi</h6>
-                                    <a href="{{ route('products.index') }}" class="btn btn-outline-success btn-sm">Xem thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body text-center">
-                                    <div class="mb-3">
-                                        <i class="fas fa-leaf text-success" style="font-size: 3rem;"></i>
-                                    </div>
-                                    <h6>Rau lá xanh</h6>
-                                    <a href="{{ route('products.index') }}" class="btn btn-outline-success btn-sm">Xem thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                </div>
             </div>
         </div>
     @endif
 </div>
 
-<!-- CSS tùy chỉnh -->
+<!-- CSS -->
 <style>
 .cart-product-image {
     transition: transform 0.3s ease;
@@ -425,7 +351,6 @@ function updateCartDisplay() {
 
 // Hiển thị thông báo
 function showToast(message, type = 'info') {
-    // Tạo toast notification đơn giản
     const toast = document.createElement('div');
     toast.className = `alert alert-${type === 'error' ? 'danger' : type} alert-dismissible fade show position-fixed`;
     toast.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
@@ -444,19 +369,18 @@ function showToast(message, type = 'info') {
     }, 3000);
 }
 
-// Khởi tạo khi trang load
-document.addEventListener('DOMContentLoaded', function() {
-    // Xử lý thay đổi số lượng bằng input
-    document.querySelectorAll('.quantity-input').forEach(input => {
-        input.addEventListener('blur', function() {
-            const cartItemId = this.closest('.cart-item').dataset.itemId;
-            const value = parseInt(this.value);
-            if (value < 1) {
-                this.value = 1;
-            }
-            // updateQuantity(cartItemId, 'set', this.value);
-        });
-    });
-});
+// // Khởi tạo khi trang load
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Xử lý thay đổi số lượng bằng input
+//     document.querySelectorAll('.quantity-input').forEach(input => {
+//         input.addEventListener('blur', function() {
+//             const cartItemId = this.closest('.cart-item').dataset.itemId;
+//             const value = parseInt(this.value);
+//             if (value < 1) {
+//                 this.value = 1;
+//             }
+//         });
+//     });
+// });
 </script>
 @endsection

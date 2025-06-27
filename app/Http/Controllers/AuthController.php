@@ -41,7 +41,7 @@ class AuthController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Sai tài khoản hoặc mật khẩu.',
+            'email' => 'Sai email hoặc mật khẩu.',
         ])->withInput();
     }
 
@@ -56,7 +56,7 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|confirmed|min:8',
         ]);
 
         $account = User::create([

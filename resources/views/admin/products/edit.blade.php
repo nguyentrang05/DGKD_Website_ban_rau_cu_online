@@ -99,6 +99,7 @@
                                     <option value="cái" {{ old('unit', $product->unit) == 'cái' ? 'selected' : '' }}>Cái</option>
                                     <option value="chiếc" {{ old('unit', $product->unit) == 'chiếc' ? 'selected' : '' }}>Chiếc</option>
                                     <option value="lít" {{ old('unit', $product->unit) == 'lít' ? 'selected' : '' }}>Lít</option>
+                                    <option value="nải" {{ old('unit', $product->unit) == 'nải' ? 'selected' : '' }}>Nải</option>
                                 </select>
                                 @error('unit')
                                     <div class="invalid-feedback">{{ $message }}</div>

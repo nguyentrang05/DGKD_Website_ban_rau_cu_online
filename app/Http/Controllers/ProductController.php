@@ -41,16 +41,4 @@ class ProductController extends Controller
     }
 
 
-    public function create()
-    {
-        // Logic to show the form for creating a new product
-        return view('products.create');
-    }
-
-    public function store(Request $request)
-    {
-        // Logic to store a new product
-        // Validate and save the product data
-        return redirect()->route('products.index');
-    }
 }

@@ -12,48 +12,37 @@ vegetable-shop/
 │   │   │   │   ├── ProductController.php
 │   │   │   │   └── UserController.php
 │   │   │   │
-│   │   │   ├── Auth/                   # Controllers xác thực
-│   │   │   │   ├── LoginController.php
-│   │   │   │   ├── RegisterController.php
-│   │   │   │   └── ProfileController.php
-│   │   │   │
+│   │   │   ├── AuthController                   # Controllers xác thực
+│   │   │   │  
 │   │   │   ├── CartController.php      # Quản lý giỏ hàng
-│   │   │   ├── CheckoutController.php  # Xử lý thanh toán
 │   │   │   ├── HomeController.php      # Trang chủ
 │   │   │   ├── OrderController.php     # Quản lý đơn hàng người dùng
 │   │   │   ├── ProductController.php   # Hiển thị sản phẩm
-│   │   │   └── SearchController.php    # Xử lý tìm kiếm
+│   │   │   └── UserController.php      # Xử lý thông tin người dùng
 │   │   │
 │   │   ├── Middleware/                 # Middleware
-│   │   │   ├── AdminMiddleware.php     # Kiểm tra quyền admin
-│   │   │   └── CustomerMiddleware.php  # Kiểm tra quyền khách hàng
-│   │   │
-│   │   └── Requests/                   # Form requests
-│   │       ├── CategoryRequest.php
-│   │       ├── ProductRequest.php
-│   │       ├── ProfileUpdateRequest.php
-│   │       └── UserRequest.php
+│   │       ├── AdminMiddleware.php     # Kiểm tra quyền admin
+│   │       └── AuthMiddleware.php      # Phân quyền hiển thị theo role
+│   │       └── LoginMiddleware.php     # Yêu cầu người dùng đăng nhập
+│   │       └── UserMiddleware.php  
+│   │  
 │   │
 │   ├── Models/                         # Models
-│   │   ├── Cart.php
-│   │   ├── Category.php
-│   │   ├── Order.php
-│   │   ├── OrderDetail.php
-│   │   ├── Product.php
-│   │   └── User.php
+│   │   ├── Cart.php                    #xử lý biến và các quan hệ trong giỏ hàng
+│   │   ├── CartItem.php                #xử lý biến và các quan hệ trong 1 mục giỏ hàng
+│   │   ├── Category.php                #xử lý biến và các quan hệ trong phần danh mục
+│   │   ├── Order.php                   #xử lý biến và các quan hệ trong phần đơn hàng
+│   │   ├── OrderItem.php               #xử lý biến và các quan hệ trong 1 mục trong đơn hàng
+│   │   ├── Product.php                 #xử lý biến và các quan hệ trong phần sản phẩm
+│   │   └── User.php                    #xử lý biến và các quan hệ trong phần người dùng
 │   │
 │   ├── Providers/                      # Service providers
-│   └── Services/                       # Business logic
-│       ├── CartService.php
-│       ├── OrderService.php
-│       └── PaymentService.php
+│  
 │
 ├── bootstrap/                          # Bootstrap Laravel
 ├── config/                             # Cấu hình
 ├── database/                           # Database
 │   ├── factories/                      # Factories cho testing
-│   │   ├── CategoryFactory.php
-│   │   ├── ProductFactory.php
 │   │   └── UserFactory.php
 │   │
 │   ├── migrations/                     # Migrations

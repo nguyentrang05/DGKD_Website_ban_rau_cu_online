@@ -9,11 +9,7 @@ class OrderItem extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    
     protected $fillable = [
         'order_id',
         'product_id',
@@ -21,17 +17,13 @@ class OrderItem extends Model
         'price',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+    
     protected $casts = [
         'price' => 'decimal:2',
     ];
 
     /**
-     * Get the order that owns the order item.
+     * Một mục đơn hàng thuộc về 1 đơn hàng.
      */
     public function order()
     {
@@ -39,7 +31,7 @@ class OrderItem extends Model
     }
 
     /**
-     * Get the product that owns the order item.
+     * Mỗi mục đơn hàng thuộc về 1 sản phẩm.
      */
     public function product()
     {
@@ -47,7 +39,7 @@ class OrderItem extends Model
     }
 
     /**
-     * Get the subtotal for the order item.
+     * Tính tổng giá từng mục đơn hàng.
      */
     public function getSubtotalAttribute()
     {

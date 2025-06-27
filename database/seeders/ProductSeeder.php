@@ -133,11 +133,6 @@ class ProductSeeder extends Seeder
             ]);
         }
 
-        // // Tạo thêm sản phẩm ngẫu nhiên cho mỗi danh mục
-        // foreach ($categories as $category) {
-        //     Product::factory()->count(5)->create([
-        //         'category_id' => $category->id
-        //     ]);
-        // }
+        
     }
 }

@@ -20,24 +20,13 @@
             <div class="product-images">
                 <!-- Main Image -->
                 <div class="main-image mb-3">
-                    <img src="{{ "/storage/$product->image_url" ? "/storage/$product->image_url" : asset('images/products/default.jpg') }}"
+                    <img src="{{ "/storage/$product->image_url" }}"
                          alt="{{ $product->name }}"
                          class="img-fluid rounded shadow-sm w-100"
                          style="height: 400px; object-fit: cover;"
                          id="mainProductImage">
                 </div>
 
-                <!-- Thumbnail Images (sample - can be extended for multiple images) -->
-                <div class="row g-2">
-                    <div class="col-3">
-                        {{-- <img src="{{ $product->image_url ? $product->image_url : asset('images/products/default.jpg') }}"
-                             alt="{{ $product->name }}"
-                             class="img-fluid rounded shadow-sm w-100 thumbnail-img border border-2 border-success"
-                             style="height: 80px; object-fit: cover; cursor: pointer;"
-                             onclick="changeMainImage(this.src)"> --}}
-                    </div>
-                    <!-- Additional thumbnails can be added here -->
-                </div>
             </div>
         </div>
 
@@ -435,10 +424,8 @@
 </style>
 
 <script>
-function changeMainImage(src) {
-    document.getElementById('mainProductImage').src = src;
-}
 
+//Tăng số lượng sản phẩm 
 function increaseQuantity(max) {
     const quantityInput = document.getElementById('quantity');
     const currentValue = parseInt(quantityInput.value);
@@ -446,7 +433,7 @@ function increaseQuantity(max) {
         quantityInput.value = currentValue + 1;
     }
 }
-
+// Giảm số lượng sản phẩm
 function decreaseQuantity() {
     const quantityInput = document.getElementById('quantity');
     const currentValue = parseInt(quantityInput.value);
@@ -454,38 +441,5 @@ function decreaseQuantity() {
         quantityInput.value = currentValue - 1;
     }
 }
-
-function addToWishlist(productId) {
-    // Add to wishlist functionality
-    fetch(`/wishlist/add/${productId}`, {
-        method: 'POST',
-        headers: {
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-            'Content-Type': 'application/json',
-        },
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Đã thêm vào danh sách yêu thích!');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
-
-// Image zoom effect
-document.addEventListener('DOMContentLoaded', function() {
-    const mainImage = document.getElementById('mainProductImage');
-    const thumbnails = document.querySelectorAll('.thumbnail-img');
-
-    thumbnails.forEach(thumb => {
-        thumb.addEventListener('click', function() {
-            thumbnails.forEach(t => t.classList.remove('border-success'));
-            this.classList.add('border-success');
-        });
-    });
-});
-</script>
+ </script>
 @endsection

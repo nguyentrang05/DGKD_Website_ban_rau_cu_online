@@ -122,31 +122,6 @@
     </div>
 </div>
 
-<!-- Modal hủy đơn hàng -->
-@if($order->status == 'pending')
-<div class="modal fade" id="cancelModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Xác nhận hủy đơn hàng</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <p>Bạn có chắc chắn muốn hủy đơn hàng #{{ $order->id }}?</p>
-                <p class="text-muted small">Lưu ý: Đơn hàng đã hủy không thể khôi phục.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                <form action="{{ route('orders.cancel', $order->id) }}" method="POST" class="d-inline">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit" class="btn btn-danger">Xác nhận hủy</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-@endif
 
 <style>
 .status-timeline {

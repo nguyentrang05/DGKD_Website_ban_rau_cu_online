@@ -18,7 +18,7 @@ class OrdersController extends Controller
     {
         $user = auth()->user();
 
-        $orders = Order::with('orderItems.product') // nếu muốn lấy luôn tên sản phẩm
+        $orders = Order::with('orderItems.product') 
                     ->where('user_id', $user->id)
                     ->orderBy('created_at', 'desc')
                     ->get();
@@ -64,7 +64,7 @@ class OrdersController extends Controller
                 'status'         => 'completed',
                 'payment_status' => 'paid',
                 'payment_method' => $request->input('payment_method', 'COD'),
-                'address'        => $request->input('address', 'Không có địa chỉ'), // bắt buộc có address
+                'address'        => $request->input('address', 'Không có địa chỉ'),
                 'delivery_date'  => $request->input('delivery_date', null),
             ]);
 
@@ -80,10 +80,6 @@ class OrdersController extends Controller
 
             // Xóa cart items
             $cart->cartItems()->delete();
-
-            // Đánh dấu giỏ hàng đã xử lý
-            // $cart->is_active = false;
-            // $cart->save();
 
             DB::commit();
 

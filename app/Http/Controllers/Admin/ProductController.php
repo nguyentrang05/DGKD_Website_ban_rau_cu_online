@@ -8,6 +8,8 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+
 
 class ProductController extends Controller
 {
@@ -151,5 +153,17 @@ class ProductController extends Controller
 
         return redirect()->route('admin.products.index')->with('success', 'Xóa sản phẩm thành công.');
     }
+    protected function generateUniqueSlug($name)
+{
+    $slug = \Str::slug($name);
+    $originalSlug = $slug;
+    $counter = 1;
+
+    while (\App\Models\Product::where('slug', $slug)->exists()) {
+        $slug = $originalSlug . '-' . $counter++;
+    }
+
+    return $slug;
+}
 
 }

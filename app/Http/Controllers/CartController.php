@@ -20,9 +20,9 @@ class CartController extends Controller
                     ->first();
 
         $suggestedProducts = Product::inRandomOrder()->limit(3)->get(); // Tùy chọn
-        $featuredCategories = Category::limit(3)->get(); // Tùy chọn
+        
 
-        return view('cart.index', compact('cart', 'suggestedProducts', 'featuredCategories'));
+        return view('cart.index', compact('cart', 'suggestedProducts'));
     }
 
 

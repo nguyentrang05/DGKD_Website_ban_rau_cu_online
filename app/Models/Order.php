@@ -9,11 +9,7 @@ class Order extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    
     protected $fillable = [
         'user_id',
         'total_price',
@@ -24,18 +20,13 @@ class Order extends Model
         'delivery_date',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'total_price' => 'decimal:2',
         'delivery_date' => 'date',
     ];
 
     /**
-     * Get the user that owns the order.
+     * Mỗi đơn hàng thuộc về 1 người dùng.
      */
     public function user()
     {
@@ -43,51 +34,47 @@ class Order extends Model
     }
 
     /**
-     * Get the items for the order.
+     *Mỗi đơn hàng có nhiều dòng sp
      */
     public function orderItems()
     {
         return $this->hasMany(OrderItem::class);
     }
 
+    //Kiểm tra trạng thái đơn hàng
 
-    /**
-     * Check if the order is pending.
-     */
     public function isPending()
     {
         return $this->status === 'pending';
     }
 
-    /**
-     * Check if the order is processing.
-     */
+
     public function isProcessing()
     {
         return $this->status === 'processing';
     }
 
-    /**
-     * Check if the order is completed.
-     */
+
     public function isCompleted()
     {
         return $this->status === 'completed';
     }
 
-    /**
-     * Check if the order is cancelled.
-     */
+
     public function isCancelled()
     {
         return $this->status === 'cancelled';
     }
 
-    /**
-     * Check if the order is paid.
-     */
     public function isPaid()
     {
         return $this->payment_status === 'paid';
+    }
+    //Tính tổng giá tại thời điểm đặt hàng
+    public function getTotalAttribute()
+    {
+        return $this->orderItems->sum(function ($item) {
+            return $item->price * $item->quantity;
+        });
     }
 }

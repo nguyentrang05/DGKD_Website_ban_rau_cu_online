@@ -9,11 +9,7 @@ class CartItem extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+   
     protected $fillable = [
         'cart_id',
         'product_id',
@@ -21,7 +17,7 @@ class CartItem extends Model
     ];
 
     /**
-     * Get the cart that owns the cart item.
+     * Mỗi cart item thuộc về 1 giỏ hàng.
      */
     public function cart()
     {
@@ -29,7 +25,7 @@ class CartItem extends Model
     }
 
     /**
-     * Get the product that owns the cart item.
+     * Mỗi cart item tương ứng với 1 sản phẩm.
      */
     public function product()
     {
@@ -37,7 +33,7 @@ class CartItem extends Model
     }
 
     /**
-     * Get the subtotal for the cart item.
+     * Tổng giá của 1 cart item.
      */
     public function getSubtotalAttribute()
     {

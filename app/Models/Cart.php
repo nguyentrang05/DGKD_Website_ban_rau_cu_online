@@ -10,7 +10,7 @@ class Cart extends Model
     use HasFactory;
 
     /**
-     * The attributes that are mass assignable.
+     * Chỉ cho phép gán các cột trong $fillable .
      *
      * @var array<int, string>
      */
@@ -20,16 +20,16 @@ class Cart extends Model
     ];
 
     /**
-     * The attributes that should be cast.
+     * Tự động ép kiểu is_active khi lấy dữ liệu từ DB.
      *
      * @var array<string, string>
      */
     protected $casts = [
         'is_active' => 'boolean',
     ];
-
+    //Thiết lập mối quan hệ 
     /**
-     * Get the user that owns the cart.
+     * Mỗi người dùng có 1 giỏ hàng.
      */
     public function user()
     {
@@ -37,7 +37,7 @@ class Cart extends Model
     }
 
     /**
-     * Get the items for the cart.
+     * Một giỏ hàng có nhiều món hàng.
      */
     public function cartItems()
     {
@@ -45,11 +45,11 @@ class Cart extends Model
     }
 
     /**
-     * Get the total price of the cart.
+     * Tính tổng giá tiền.
      */
     public function getTotalPriceAttribute()
     {
-        return $this->items->sum(function ($item) {
+        return $this->cartItems()->sum(function ($item) {
             return $item->product->price * $item->quantity;
         });
     }

@@ -20,7 +20,7 @@ class Category extends Model
     ];
 
     /**
-     * Get the products for the category.
+     * Một danh mục có nhiều sản phẩm.
      */
     public function products()
     {

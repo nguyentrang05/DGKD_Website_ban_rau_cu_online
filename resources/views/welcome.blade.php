@@ -199,8 +199,8 @@
 </div>
 @endsection
 
-@section('scripts')
-<script>
+{{-- @section('scripts') --}}
+{{-- <script>
     // Script để xử lý thêm vào giỏ hàng
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function() {
@@ -209,5 +209,5 @@
             alert('Đã thêm sản phẩm vào giỏ hàng!');
         });
     });
-</script>
+</script> --}}
 @endsection

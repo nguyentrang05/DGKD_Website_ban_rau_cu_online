@@ -24,7 +24,7 @@ return new class extends Migration {
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
-
+        //Lưu thông tin các phiên đăng nhập.
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();

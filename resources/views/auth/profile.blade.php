@@ -122,45 +122,13 @@
                             <p><strong>Số điện thoại:</strong> {{ $user->phone }}</p>
                             <p><strong>Địa chỉ:</strong> {{ $user->address }}</p>
                         </div>
-                        <div class="col-md-6">
-                            {{-- <p><strong>Phường/Xã:</strong> {{ $address->ward }}</p>
-                            <p><strong>Quận/Huyện:</strong> {{ $address->district }}</p>
-                            <p><strong>Tỉnh/Thành phố:</strong> {{ $address->province }}</p> --}}
-                        </div>
+                        
                     </div>
-                    {{-- <div class="mt-3">
-                        <a href="" class="btn btn-outline-primary">Quản lý địa chỉ</a>
-                    </div> --}}
+        
                 @else
                     <p>Bạn chưa có địa chỉ mặc định.</p>
                     <a href="" class="btn btn-primary">Thêm địa chỉ mới</a>
                 @endif
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal đổi ảnh đại diện -->
-<div class="modal fade" id="changeAvatarModal" tabindex="-1" aria-labelledby="changeAvatarModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="changeAvatarModalLabel">Đổi ảnh đại diện</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form method="" action="" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="avatar" class="form-label">Chọn ảnh đại diện mới</label>
-                        <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*" required>
-                        <div class="form-text">Chỉ chấp nhận file ảnh (JPG, PNG, GIF). Kích thước tối đa 2MB.</div>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-success">Cập nhật</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
