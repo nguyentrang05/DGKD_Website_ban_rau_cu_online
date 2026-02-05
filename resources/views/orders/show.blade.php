@@ -12,9 +12,17 @@
                     <h2>Chi tiết đơn hàng #{{ $order->id }}</h2>
                     <p class="text-muted mb-0">Đặt hàng ngày {{ $order->created_at->format('d/m/Y H:i') }}</p>
                 </div>
-                <a href="{{ route('orders.index') }}" class="btn btn-outline-secondary">
-                    <i class="fas fa-arrow-left"></i> Quay lại danh sách
-                </a>
+                <div>
+                    <a href="{{ route('orders.index') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Quay lại danh sách
+                    </a>
+
+                    @if($order->payment_status !== 'paid' && $order->status !== 'cancelled')
+                        <a href="{{ route('orders.pay', $order->id) }}" class="btn btn-primary ms-2">
+                            <i class="fas fa-credit-card"></i> Thanh toán
+                        </a>
+                    @endif
+                </div>
             </div>
 
             <div class="row">
@@ -43,7 +51,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="me-3">
-                                                        @if($detail->product->image_url)
+                                                        @if($detail->product && $detail->product->image_url)
                                                             <img src="{{ asset('storage/' . $detail->product->image_url) }}"
                                                                  alt="{{ $detail->product->name }}"
                                                                  class="rounded"
@@ -56,9 +64,9 @@
                                                         @endif
                                                     </div>
                                                     <div>
-                                                        <h6 class="mb-1">{{ $detail->product->name }}</h6>
+                                                        <h6 class="mb-1">{{ $detail->product?->name ?? $detail->product_name }}</h6>
                                                         <small class="text-muted">
-                                                            {{ $detail->product->category->name ?? 'Chưa phân loại' }}
+                                                            {{ $detail->product?->category->name ?? 'Chưa phân loại' }}
                                                         </small>
                                                     </div>
                                                 </div>

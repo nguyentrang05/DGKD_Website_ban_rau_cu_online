@@ -42,6 +42,13 @@ Route::middleware([LoginMiddleware::class, AdminMiddleware::class])->prefix('adm
     Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::resource('users', AdminUserController::class);
     Route::resource('orders', AdminOrderController::class);
+    // Admin-only endpoint to confirm payment for an order
+    Route::post('orders/{order}/confirm-payment', [\App\Http\Controllers\OrdersController::class, 'confirmPayment'])->name('orders.confirmPayment');
+    // Admin endpoint to add a note to an order (used by admin.orders.show view)
+    Route::post('orders/{order}/add-note', [AdminOrderController::class, 'addNote'])->name('orders.add-note');
+    // Admin export endpoints (PDF)
+    Route::get('orders/export/pdf', [AdminOrderController::class, 'exportPdf'])->name('orders.export.pdf');
+    Route::get('reports/revenue/export/pdf', [AdminOrderController::class, 'exportRevenuePdf'])->name('reports.revenue.export.pdf');
     Route::get('/categories/list', [AdminCategoryController::class, 'list']);
     Route::resource('categories', AdminCategoryController::class);
     Route::resource('products', AdminProductController::class);
@@ -60,5 +67,7 @@ Route::middleware([LoginMiddleware::class, UserMiddleware::class])->group(functi
 
     Route::get('/orders', [OrdersController::class, 'index'])->name('orders.index');
     Route::get('/orders/{orderId}', [OrdersController::class, 'show'])->name('orders.show');
+    Route::get('/orders/{order}/pay', [OrdersController::class, 'pay'])->name('orders.pay');
     Route::post('/orders/checkout/', [OrdersController::class, 'checkout'])->name('orders.checkout');
+    Route::post('/orders/{order}/cancel', [OrdersController::class, 'cancel'])->name('orders.cancel');
 });

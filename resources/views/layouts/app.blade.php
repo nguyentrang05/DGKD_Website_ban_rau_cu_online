@@ -29,24 +29,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/products') }}">Sản phẩm</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                                Danh mục
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- Danh mục sẽ được render động từ database -->
-                                <li><a class="dropdown-item" href="">Rau xanh</a></li>
-                                <li><a class="dropdown-item" href="">Củ</a></li>
-                                <li><a class="dropdown-item" href="">Quả</a></li>
-                            </ul>
-                        </li>
                     </ul>
 
-                    <form class="d-flex mx-3" action="" method="GET">
-                        <input class="form-control me-2" type="search" name="query" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-
+                   
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/cart') }}">

@@ -40,11 +40,11 @@
                                 <i class="fas fa-users me-2"></i> Quản lý người dùng
                             </a>
                         </li>
-                        <li class="nav-item mt-5">
+                        {{-- <li class="nav-item mt-5">
                             <a class="nav-link text-white" href="{{ url('/') }}" target="_blank">
                                 <i class="fas fa-external-link-alt me-2"></i> Xem trang web
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <form action="{{ url('/logout') }}" method="POST">
                                 @csrf

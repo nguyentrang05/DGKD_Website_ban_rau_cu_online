@@ -25,7 +25,7 @@
     </div>
 
     <!-- Filters & Search -->
-    <div class="row mb-4">
+    {{-- <div class="row mb-4">
         <div class="col-12">
             <div class="card shadow-sm">
                 <div class="card-body">
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Statistics Cards -->
     <div class="row mb-4">
@@ -145,7 +145,7 @@
                 <div class="card-header bg-white">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Danh sách sản phẩm</h5>
-                        <div class="d-flex gap-2">
+                        {{-- <div class="d-flex gap-2">
                             <button class="btn btn-outline-success btn-sm" >
                                 <i class="fas fa-file-excel me-1"></i>Xuất Excel
                             </button>
@@ -163,7 +163,7 @@
                                     </a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="card-body p-0">

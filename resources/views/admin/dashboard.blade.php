@@ -48,6 +48,41 @@
                         </div>
                     </div>
                 </div>
+                        <!-- Export Revenue Modal -->
+                        <div class="modal fade" id="exportRevenueModal" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Xuất báo cáo doanh thu (PDF)</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <form method="GET" action="{{ route('admin.reports.revenue.export.pdf') }}">
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label for="month" class="form-label">Tháng</label>
+                                                <select id="month" name="month" class="form-select">
+                                                    @for($m=1;$m<=12;$m++)
+                                                        <option value="{{ $m }}" {{ $m == now()->month ? 'selected' : '' }}>{{ $m }}</option>
+                                                    @endfor
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="year" class="form-label">Năm</label>
+                                                <select id="year" name="year" class="form-select">
+                                                    @for($y = now()->year - 2; $y <= now()->year; $y++)
+                                                        <option value="{{ $y }}" {{ $y == now()->year ? 'selected' : '' }}>{{ $y }}</option>
+                                                    @endfor
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                            <button type="submit" class="btn btn-primary">Xuất PDF</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
             </div>
         </div>
 
@@ -192,7 +227,7 @@
                     <h6 class="m-0 fw-bold text-primary">
                         <i class="fas fa-list me-2"></i>Đơn Hàng Gần Đây
                     </h6>
-                    <a href="" class="btn btn-primary btn-sm">
+                    <a href="{{ route('admin.orders.index') }}" class="btn btn-primary btn-sm">
                         Xem Tất Cả <i class="fas fa-arrow-right ms-1"></i>
                     </a>
                 </div>
@@ -309,18 +344,19 @@
                 </div>
                 <div class="card-body">
                     <div class="d-grid gap-2">
-                        <a href="" class="btn btn-success">
+                        <a href="{{ route('admin.products.create') }}" class="btn btn-success">
                             <i class="fas fa-plus me-2"></i>Thêm Sản Phẩm Mới
                         </a>
-                        <a href="" class="btn btn-info">
-                            <i class="fas fa-tags me-2"></i>Thêm Danh Mục
-                        </a>
-                        <a href="" class="btn btn-warning">
+                        <!-- Thêm Danh Mục đã loại bỏ theo yêu cầu -->
+                        <a href="{{ route('admin.orders.index') }}" class="btn btn-warning">
                             <i class="fas fa-list-alt me-2"></i>Quản Lý Đơn Hàng
                         </a>
-                        <a href="" class="btn btn-primary">
+                        <a href="{{ route('admin.users.index') }}" class="btn btn-primary">
                             <i class="fas fa-users me-2"></i>Quản Lý Khách Hàng
                         </a>
+                        <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exportRevenueModal">
+                            <i class="fas fa-file-pdf me-2"></i>Xuất báo cáo doanh thu (PDF)
+                        </button>
                     </div>
                 </div>
             </div>

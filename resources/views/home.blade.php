@@ -12,8 +12,8 @@
     </div>
 </div>
 
-<div class="row mb-4">
-    <div class="col-md-4">
+<div class="row mb-6">
+    <div class="col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-shopping-bag me-2"></i> Đơn hàng của tôi</h5>
@@ -22,21 +22,12 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-user me-2"></i> Thông tin cá nhân</h5>
                 <p class="card-text">Cập nhật thông tin cá nhân và địa chỉ giao hàng.</p>
                 <a href="{{ url('/profile') }}" class="btn btn-outline-primary">Cập nhật thông tin</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-heart me-2"></i> Sản phẩm yêu thích</h5>
-                <p class="card-text">Xem danh sách sản phẩm bạn đã đánh dấu yêu thích.</p>
-                <a href="" class="btn btn-outline-primary">Xem yêu thích</a>
             </div>
         </div>
     </div>
@@ -84,15 +75,4 @@
 </div>
 @endsection
 
-@section('scripts')
-<script>
-    // Script để xử lý thêm vào giỏ hàng
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', function() {
-            const productId = this.getAttribute('data-id');
-            // Thêm sản phẩm vào giỏ hàng (sẽ xử lý bằng AJAX)
-            alert('Đã thêm sản phẩm vào giỏ hàng!');
-        });
-    });
-</script>
-@endsection
+

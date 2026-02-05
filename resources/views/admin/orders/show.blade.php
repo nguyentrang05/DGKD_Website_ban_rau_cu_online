@@ -344,6 +344,15 @@
                             <i class="fas fa-ban"></i> Hủy đơn hàng
                         </button>
                         @endif
+
+                        @if($order->payment_status != 'paid' && $order->status != 'cancelled')
+                        <form id="confirmPaymentForm" action="{{ route('admin.orders.confirmPayment', $order->id) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-success mt-2" onclick="return confirm('Xác nhận đã nhận thanh toán cho đơn hàng này?');">
+                                <i class="fas fa-money-bill-wave"></i> Xác nhận thanh toán
+                            </button>
+                        </form>
+                        @endif
                     </div>
                 </div>
             </div>

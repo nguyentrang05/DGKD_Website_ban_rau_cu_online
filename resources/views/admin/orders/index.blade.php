@@ -94,54 +94,6 @@
         </div>
     </div>
 
-    {{-- <!-- Filters and Search -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Bộ lọc và tìm kiếm</h6>
-        </div>
-        <div class="card-body">
-            <form method="GET" action="">
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <label for="search" class="form-label">Tìm kiếm</label>
-                        <input type="text" class="form-control" id="search" name="search"
-                               placeholder="Mã đơn hàng, tên khách hàng..."
-                               value="">
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <label for="status" class="form-label">Trạng thái</label>
-                        <select class="form-select" id="status" name="status">
-                            <option value="">Tất cả</option>
-                            <option value="pending" >Chờ xử lý</option>
-                            <option value="confirmed">Đã xác nhận</option>
-                            <option value="shipping">Đang giao</option>
-                            <option value="delivered">Đã giao</option>
-                            <option value="cancelled">Đã hủy</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <label for="date_from" class="form-label">Từ ngày</label>
-                        <input type="date" class="form-control" id="date_from" name="date_from"
-                               value="">
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <label for="date_to" class="form-label">Đến ngày</label>
-                        <input type="date" class="form-control" id="date_to" name="date_to"
-                               value="">
-                    </div>
-                    <div class="col-md-3 mb-3 d-flex align-items-end">
-                        <button type="submit" class="btn btn-primary me-2">
-                            <i class="fas fa-search"></i> Lọc
-                        </button>
-                        <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary">
-                            <i class="fas fa-undo"></i> Reset
-                        </a>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div> --}}
-
     <!-- Orders Table -->
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
@@ -154,16 +106,16 @@
                     <li><a class="dropdown-item" href="">
                         <i class="fas fa-file-excel"></i> Excel
                     </a></li>
-                    <li><a class="dropdown-item" href="">
-                        <i class="fas fa-file-pdf"></i> PDF
+                    <li><a class="dropdown-item" href="{{ route('admin.orders.export.pdf') }}">
+                        <i class="fas fa-file-pdf"></i> PDF (toàn bộ)
                     </a></li>
                 </ul>
             </div>
         </div>
-        <div class="card-body">
+    <div class="card-body">
             @if($orders->count() > 0)
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover" id="dataTable">
+                    <table class="table table-bordered table-hover">
                         <thead class="table-light">
                             <tr>
                                 <th width="5%">#</th>
@@ -174,7 +126,7 @@
                                 <th width="12%">Trạng thái</th>
                                 <th width="15%">Phương thức TT</th>
                                 <th width="13%">Trạng thái TT</th>
-                                {{-- <th width="10%">Thao tác</th> --}}
+                                <th width="10%">Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -245,55 +197,22 @@
                                         <span class="badge bg-danger">Chưa thanh toán</span>
                                     @endif
                                 </td>
-                                {{-- <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="{{ route('admin.orders.show', $order->id) }}"
-                                           class="btn btn-info btn-sm" title="Xem chi tiết">
+                                <td class="text-center">
+                                    <div class="btn-group" role="group" aria-label="Actions">
+                                        <a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-sm btn-outline-primary" title="Xem chi tiết">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        @if($order->status != 'cancelled' && $order->status != 'delivered')
-                                        <div class="dropdown">
-                                            <button class="btn btn-warning btn-sm dropdown-toggle"
-                                                    type="button" data-bs-toggle="dropdown" title="Cập nhật trạng thái">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                @if($order->status == 'pending')
-                                                    <li>
-                                                        <a class="dropdown-item" href="#"
-                                                           onclick="updateOrderStatus({{ $order->id }}, 'confirmed')">
-                                                            <i class="fas fa-check text-info"></i> Xác nhận
-                                                        </a>
-                                                    </li>
-                                                @endif
-                                                @if($order->status == 'confirmed')
-                                                    <li>
-                                                        <a class="dropdown-item" href="#"
-                                                           onclick="updateOrderStatus({{ $order->id }}, 'shipping')">
-                                                            <i class="fas fa-truck text-primary"></i> Giao hàng
-                                                        </a>
-                                                    </li>
-                                                @endif
-                                                @if($order->status == 'shipping')
-                                                    <li>
-                                                        <a class="dropdown-item" href="#"
-                                                           onclick="updateOrderStatus({{ $order->id }}, 'delivered')">
-                                                            <i class="fas fa-check-circle text-success"></i> Đã giao
-                                                        </a>
-                                                    </li>
-                                                @endif
-                                                <li><hr class="dropdown-divider"></li>
-                                                <li>
-                                                    <a class="dropdown-item text-danger" href="#"
-                                                       onclick="updateOrderStatus({{ $order->id }}, 'cancelled')">
-                                                        <i class="fas fa-times"></i> Hủy đơn
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
+
+                                        @if($order->payment_status != 'paid' && $order->status != 'cancelled')
+                                            <form action="{{ route('admin.orders.confirmPayment', $order->id) }}" method="POST" style="display:inline-block;">
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-success" onclick="return confirm('Xác nhận đã nhận thanh toán cho đơn hàng #{{ $order->id }}?');" title="Xác nhận thanh toán">
+                                                    <i class="fas fa-money-bill-wave"></i>
+                                                </button>
+                                            </form>
                                         @endif
                                     </div>
-                                </td> --}}
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -301,13 +220,7 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="d-flex justify-content-between align-items-center mt-4">
-                    <div class="text-muted">
-                        Hiển thị {{ $orders->firstItem() }}-{{ $orders->lastItem() }}
-                        trong tổng số {{ $orders->total() }} đơn hàng
-                    </div>
-                    {{ $orders->appends(request()->query())->links() }}
-                </div>
+                <div class="mt-4"></div>
             @else
                 <div class="text-center py-5">
                     <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
@@ -315,6 +228,15 @@
                     <p class="text-muted">Thử thay đổi bộ lọc tìm kiếm của bạn</p>
                 </div>
             @endif
+        </div>
+        <div class="card-footer">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="text-muted">
+                    Hiển thị {{ $orders->firstItem() }}-{{ $orders->lastItem() }}
+                    trong tổng số {{ $orders->total() }} đơn hàng
+                </div>
+                {{ $orders->appends(request()->query())->links('pagination::bootstrap-4') }}
+            </div>
         </div>
     </div>
 </div>
@@ -346,70 +268,70 @@
 let currentOrderId = null;
 let currentStatus = null;
 
-function updateOrderStatus(orderId, status) {
-    currentOrderId = orderId;
-    currentStatus = status;
+// function updateOrderStatus(orderId, status) {
+//     currentOrderId = orderId;
+//     currentStatus = status;
 
-    const statusText = {
-        'confirmed': 'Đã xác nhận',
-        'shipping': 'Đang giao hàng',
-        'delivered': 'Đã giao hàng',
-        'cancelled': 'Đã hủy'
-    };
+//     const statusText = {
+//         'confirmed': 'Đã xác nhận',
+//         'shipping': 'Đang giao hàng',
+//         'delivered': 'Đã giao hàng',
+//         'cancelled': 'Đã hủy'
+//     };
 
-    document.getElementById('statusUpdateDetails').innerHTML =
-        `<strong>Trạng thái mới:</strong> <span class="badge bg-primary">${statusText[status]}</span>`;
+//     document.getElementById('statusUpdateDetails').innerHTML =
+//         `<strong>Trạng thái mới:</strong> <span class="badge bg-primary">${statusText[status]}</span>`;
 
-    const modal = new bootstrap.Modal(document.getElementById('statusUpdateModal'));
-    modal.show();
-}
+//     const modal = new bootstrap.Modal(document.getElementById('statusUpdateModal'));
+//     modal.show();
+// }
 
-document.getElementById('confirmStatusUpdate').addEventListener('click', function() {
-    if (currentOrderId && currentStatus) {
-        // Tạo form để submit
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = `/admin/orders/${currentOrderId}/update-status`;
+// document.getElementById('confirmStatusUpdate').addEventListener('click', function() {
+//     if (currentOrderId && currentStatus) {
+//         // Tạo form để submit
+//         const form = document.createElement('form');
+//         form.method = 'POST';
+//         form.action = `/admin/orders/${currentOrderId}/update-status`;
 
-        // CSRF token
-        const csrfToken = document.createElement('input');
-        csrfToken.type = 'hidden';
-        csrfToken.name = '_token';
-        csrfToken.value = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        form.appendChild(csrfToken);
+//         // CSRF token
+//         const csrfToken = document.createElement('input');
+//         csrfToken.type = 'hidden';
+//         csrfToken.name = '_token';
+//         csrfToken.value = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+//         form.appendChild(csrfToken);
 
-        // Method
-        const method = document.createElement('input');
-        method.type = 'hidden';
-        method.name = '_method';
-        method.value = 'PATCH';
-        form.appendChild(method);
+//         // Method
+//         const method = document.createElement('input');
+//         method.type = 'hidden';
+//         method.name = '_method';
+//         method.value = 'PATCH';
+//         form.appendChild(method);
 
-        // Status
-        const status = document.createElement('input');
-        status.type = 'hidden';
-        status.name = 'status';
-        status.value = currentStatus;
-        form.appendChild(status);
+//         // Status
+//         const status = document.createElement('input');
+//         status.type = 'hidden';
+//         status.name = 'status';
+//         status.value = currentStatus;
+//         form.appendChild(status);
 
-        document.body.appendChild(form);
-        form.submit();
-    }
-});
+//         document.body.appendChild(form);
+//         form.submit();
+//     }
+// });
 
 // Auto-hide alerts after 5 seconds
-document.addEventListener('DOMContentLoaded', function() {
-    const alerts = document.querySelectorAll('.alert');
-    alerts.forEach(function(alert) {
-        setTimeout(function() {
-            alert.style.transition = 'opacity 0.5s';
-            alert.style.opacity = '0';
-            setTimeout(function() {
-                alert.remove();
-            }, 500);
-        }, 5000);
-    });
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     const alerts = document.querySelectorAll('.alert');
+//     alerts.forEach(function(alert) {
+//         setTimeout(function() {
+//             alert.style.transition = 'opacity 0.5s';
+//             alert.style.opacity = '0';
+//             setTimeout(function() {
+//                 alert.remove();
+//             }, 500);
+//         }, 5000);
+//     });
+// });
 </script>
 @endpush
 

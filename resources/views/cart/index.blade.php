@@ -69,13 +69,13 @@
 
                                     <div class="col-md-3 col-sm-6">
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <input type="number"
-                                                   class="form-control form-control-sm mx-2 text-center "
-                                                   value="{{ $cartItem->quantity }}"
-                                                   min="1"
-                                                   max="99"
-                                                   style="width: 60px;"
-                                                   readonly>
+                          <input type="number"
+                              class="form-control form-control-sm mx-2 text-center quantity-input"
+                              value="{{ $cartItem->quantity }}"
+                              min="1"
+                              max="99"
+                              style="width: 60px;"
+                              readonly>
                                         </div>
                                     </div>
 
@@ -154,15 +154,44 @@
                             </div>
                         </div>
 
+                        <!-- Nút thanh toán: chọn phương thức (COD hoặc QRCode) -->
+                        <div class="mb-3">
+                            <label class="form-label small">Phương thức thanh toán:</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="payment_method" id="pmCod" value="COD" checked>
+                                    <label class="form-check-label" for="pmCod">Tiền mặt (COD)</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="payment_method" id="pmQr" value="qrcode">
+                                    <label class="form-check-label" for="pmQr">Thanh toán bằng QR Code</label>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Nút thanh toán -->
                         <div class="d-grid">
-                            <form action="{{ route('orders.checkout') }}" method="POST">
+                            <form id="checkoutForm" action="{{ route('orders.checkout') }}" method="POST">
                                 @csrf
+                                <input type="hidden" name="payment_method" id="paymentMethodField" value="COD">
                                 <button type="submit" class="btn btn-success btn-lg d-grid">
                                     <i class="fas fa-credit-card"></i>
                                     Tiến hành thanh toán
                                 </button>
                             </form>
+                        </div>
+
+                        <!-- Modal QR Code (hiển thị khi chọn QR) -->
+                        <div id="qrcodeModal" style="display:none; position: fixed; inset:0; background: rgba(0,0,0,0.6); z-index: 1050; align-items:center; justify-content:center;">
+                            <div style="background:#fff; padding:22px 20px; border-radius:10px; width:360px; max-width:92%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+                                <h5 class="mb-2">Quét QR để thanh toán</h5>
+                                <div id="qrcode" style="margin: 12px auto; width:240px; height:240px;"></div>
+                                <p class="small text-muted mb-2">Số tiền: <span id="qrcodeAmount"></span></p>
+                                        <div class="d-flex gap-2" style="justify-content:center;">
+                                            <button id="confirmOrderBtn" class="btn btn-success btn-sm">Xác nhận đặt hàng</button>
+                                            <button id="closeQr" class="btn btn-outline-secondary btn-sm">Đóng</button>
+                                        </div>
+                            </div>
                         </div>
 
                         <!-- Thông tin bảo mật -->
@@ -368,19 +397,120 @@ function showToast(message, type = 'info') {
         }
     }, 3000);
 }
+</script>
+<!-- QRCode library and payment handling -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const checkoutForm = document.getElementById('checkoutForm');
+    const paymentMethodField = document.getElementById('paymentMethodField');
+    let currentOrderId = null;
+    let qrcodeObj = null;
 
-// // Khởi tạo khi trang load
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Xử lý thay đổi số lượng bằng input
-//     document.querySelectorAll('.quantity-input').forEach(input => {
-//         input.addEventListener('blur', function() {
-//             const cartItemId = this.closest('.cart-item').dataset.itemId;
-//             const value = parseInt(this.value);
-//             if (value < 1) {
-//                 this.value = 1;
-//             }
-//         });
-//     });
-// });
+    // Sync radio buttons to hidden field
+    document.querySelectorAll('input[name="payment_method"]').forEach(r => {
+        r.addEventListener('change', (e) => {
+            paymentMethodField.value = e.target.value;
+        });
+    });
+
+    // Handle checkout form submit
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', function (e) {
+            const pm = paymentMethodField.value;
+            if (pm === 'qrcode') {
+                e.preventDefault();
+                // Send AJAX to create order and get order id + amount
+                const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                fetch(this.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': token,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ payment_method: 'qrcode' })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        currentOrderId = data.order_id;
+                        const amount = data.amount || 0;
+                        document.getElementById('qrcodeAmount').textContent = amount.toLocaleString('vi-VN') + 'đ';
+
+                        // Generate QR code payload as a link to the order payment page
+                        const payload = `${window.location.origin}/orders/${data.order_id}/pay`;
+
+                        const qrcodeContainer = document.getElementById('qrcode');
+                        qrcodeContainer.innerHTML = '';
+                        qrcodeObj = new QRCode(qrcodeContainer, {
+                            text: payload,
+                            width: 220,
+                            height: 220
+                        });
+
+                        // Show modal
+                        const modal = document.getElementById('qrcodeModal');
+                        modal.style.display = 'flex';
+                    } else {
+                        showToast('Không thể tạo đơn hàng để thanh toán QR', 'error');
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    showToast('Lỗi khi tạo đơn hàng', 'error');
+                });
+            }
+        });
+    }
+
+    // Close QR modal (if user closes without confirming, cancel the created order)
+    const closeBtn = document.getElementById('closeQr');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            const modal = document.getElementById('qrcodeModal');
+            if (currentOrderId) {
+                const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                fetch(`/orders/${currentOrderId}/cancel`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': token,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({})
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        showToast(data.message || 'Đã huỷ đơn và trả sản phẩm về giỏ hàng', 'success');
+                    } else {
+                        showToast(data.message || 'Không thể huỷ đơn', 'error');
+                    }
+                    modal.style.display = 'none';
+                })
+                .catch(err => {
+                    console.error(err);
+                    showToast('Lỗi khi huỷ đơn', 'error');
+                    modal.style.display = 'none';
+                });
+            } else {
+                modal.style.display = 'none';
+            }
+        });
+    }
+
+    // User confirms order (keep order as unpaid/pending)
+    const confirmOrderBtn = document.getElementById('confirmOrderBtn');
+    if (confirmOrderBtn) {
+        confirmOrderBtn.addEventListener('click', () => {
+            if (!currentOrderId) return showToast('Không có đơn hàng để xác nhận', 'error');
+            showToast('Đơn hàng đã được tạo. Vui lòng chờ admin xác nhận thanh toán.', 'success');
+            document.getElementById('qrcodeModal').style.display = 'none';
+            // Optionally redirect to order detail
+            window.location.href = `/orders/${currentOrderId}`;
+        });
+    }
+});
 </script>
 @endsection

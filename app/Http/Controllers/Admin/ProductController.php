@@ -49,7 +49,7 @@ class ProductController extends Controller
             'stock_quantity' => 'required|integer|min:0',
             'unit' => 'required|string|in:kg,gram,bó,gói,hộp,chai,lon,cái,chiếc,lít',
             'category_id' => 'required|exists:categories,id',
-            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // 2MB max
+            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', 
         ], [
             // Custom validation messages
             'name.required' => 'Tên sản phẩm là bắt buộc.',

@@ -150,7 +150,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">Danh sách người dùng</h6>
-            <div class="dropdown">
+            {{-- <div class="dropdown">
                 <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fas fa-download me-1"></i>Xuất dữ liệu
@@ -159,7 +159,7 @@
                     <li><a class="dropdown-item" href="#"><i class="fas fa-file-excel me-2"></i>Excel</a></li>
                     <li><a class="dropdown-item" href="#"><i class="fas fa-file-pdf me-2"></i>PDF</a></li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
         <div class="card-body">
             <div class="table-responsive">

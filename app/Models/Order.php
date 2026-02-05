@@ -41,6 +41,14 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
+    /**
+     * Backwards-compatible alias used by some admin views.
+     */
+    public function orderDetails()
+    {
+        return $this->orderItems();
+    }
+
     //Kiểm tra trạng thái đơn hàng
 
     public function isPending()
