@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\phpunit.blackbox.xml" tests="106" assertions="308" errors="8" failures="17" skipped="0" time="4.596679">
+    <testsuite name="BlackBoxLogin" tests="21" assertions="72" errors="0" failures="0" skipped="0" time="1.909712">
+      <testsuite name="Tests\Feature\BlackBox\LoginBlackBoxTest" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" tests="21" assertions="72" errors="0" failures="0" skipped="0" time="1.909712">
+        <testcase name="test_DN01_user_login_goes_to_home" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="18" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="5" time="0.441759"/>
+        <testcase name="test_DN02_admin_login_goes_to_dashboard" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="28" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="5" time="0.026313"/>
+        <testcase name="test_DN03_wrong_password_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="38" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="5" time="0.238152"/>
+        <testcase name="test_DN04_unknown_email_gives_same_message_as_wrong_password" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="50" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="5" time="0.267267"/>
+        <testcase name="test_DN05_empty_credentials_are_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="60" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="6" time="0.084620"/>
+        <testsuite name="Tests\Feature\BlackBox\LoginBlackBoxTest::test_DN06_invalid_email_format_is_rejected" tests="3" assertions="15" errors="0" failures="0" skipped="0" time="0.211137">
+          <testcase name="test_DN06_invalid_email_format_is_rejected with data set &quot;thieu_@&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="76" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="5" time="0.138891"/>
+          <testcase name="test_DN06_invalid_email_format_is_rejected with data set &quot;thieu_ten_mien&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="76" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="5" time="0.032905"/>
+          <testcase name="test_DN06_invalid_email_format_is_rejected with data set &quot;co_khoang_trang&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="76" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="5" time="0.039341"/>
+        </testsuite>
+        <testcase name="test_DN06b_password_is_case_sensitive" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="86" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="3" time="0.252990"/>
+        <testcase name="test_DN07_logged_in_user_is_redirected_away_from_login_page" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="96" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="2" time="0.063439"/>
+        <testcase name="test_DN07b_logged_in_admin_is_redirected_away_from_login_page" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="101" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="2" time="0.029962"/>
+        <testsuite name="Tests\Feature\BlackBox\LoginBlackBoxTest::test_DN08_guest_is_redirected_to_login" tests="5" assertions="10" errors="0" failures="0" skipped="0" time="0.125237">
+          <testcase name="test_DN08_guest_is_redirected_to_login with data set &quot;gio_hang&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="120" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="2" time="0.026440"/>
+          <testcase name="test_DN08_guest_is_redirected_to_login with data set &quot;don_hang&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="120" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="2" time="0.028985"/>
+          <testcase name="test_DN08_guest_is_redirected_to_login with data set &quot;ho_so&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="120" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="2" time="0.020470"/>
+          <testcase name="test_DN08_guest_is_redirected_to_login with data set &quot;trang_chu_user&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="120" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="2" time="0.028889"/>
+          <testcase name="test_DN08_guest_is_redirected_to_login with data set &quot;admin&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="120" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="2" time="0.020453"/>
+        </testsuite>
+        <testcase name="test_DN09_normal_user_cannot_open_admin_area" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="126" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="1" time="0.043390"/>
+        <testcase name="test_DN10_login_and_register_pages_are_available_with_masked_password" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="132" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="4" time="0.030008"/>
+        <testcase name="test_DN11_logout_ends_the_session" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="139" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="5" time="0.029608"/>
+        <testcase name="test_DN12_product_list_is_public" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="148" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="3" time="0.039794"/>
+        <testcase name="test_DN13_missing_product_returns_404" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\LoginBlackBoxTest.php" line="157" class="Tests\Feature\BlackBox\LoginBlackBoxTest" classname="Tests.Feature.BlackBox.LoginBlackBoxTest" assertions="1" time="0.026037"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="BlackBoxRegister" tests="29" assertions="119" errors="0" failures="8" skipped="0" time="0.780817">
+      <testsuite name="Tests\Feature\BlackBox\RegisterBlackBoxTest" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" tests="29" assertions="119" errors="0" failures="8" skipped="0" time="0.780817">
+        <testcase name="test_DK01_valid_data_creates_account_and_logs_in" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="27" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="5" time="0.026140"/>
+        <testsuite name="Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK02_missing_required_field_is_rejected" tests="5" assertions="22" errors="0" failures="2" skipped="0" time="0.142316">
+          <testcase name="test_DK02_missing_required_field_is_rejected with data set &quot;DK02_thieu_ho_ten&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="48" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.025234"/>
+          <testcase name="test_DK02_missing_required_field_is_rejected with data set &quot;DK02_thieu_email&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="48" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.022157"/>
+          <testcase name="test_DK02_missing_required_field_is_rejected with data set &quot;DK02_thieu_sdt&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="48" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="2" time="0.046918">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK02_missing_required_field_is_rejected with data set "DK02_thieu_sdt"&#13;
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'http://localhost/register'
++'http://localhost/home'
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:377
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:205
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:21
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:50</failure>
+          </testcase>
+          <testcase name="test_DK02_missing_required_field_is_rejected with data set &quot;DK02_thieu_mat_khau&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="48" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.021829"/>
+          <testcase name="test_DK02_missing_required_field_is_rejected with data set &quot;DK12_thieu_dieu_khoan&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="48" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="2" time="0.026177">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK02_missing_required_field_is_rejected with data set "DK12_thieu_dieu_khoan"&#13;
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'http://localhost/register'
++'http://localhost/home'
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:377
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:205
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:21
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:50</failure>
+          </testcase>
+        </testsuite>
+        <testcase name="test_DK02b_name_with_only_spaces_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="54" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.028420"/>
+        <testsuite name="Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK03_invalid_email_is_rejected" tests="4" assertions="24" errors="0" failures="0" skipped="0" time="0.102966">
+          <testcase name="test_DK03_invalid_email_is_rejected with data set &quot;thieu_@&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="71" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.028077"/>
+          <testcase name="test_DK03_invalid_email_is_rejected with data set &quot;thieu_ten_mien&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="71" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.023589"/>
+          <testcase name="test_DK03_invalid_email_is_rejected with data set &quot;thieu_phan_ten&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="71" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.025029"/>
+          <testcase name="test_DK03_invalid_email_is_rejected with data set &quot;co_khoang_trang&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="71" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.026272"/>
+        </testsuite>
+        <testcase name="test_DK04_duplicate_email_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="77" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.028353"/>
+        <testcase name="test_DK05_password_with_seven_characters_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="88" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.022875"/>
+        <testsuite name="Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK06_password_at_or_above_minimum_is_accepted" tests="2" assertions="6" errors="0" failures="0" skipped="0" time="0.051350">
+          <testcase name="test_DK06_password_at_or_above_minimum_is_accepted with data set &quot;DK06_8_ky_tu&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="103" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="3" time="0.027882"/>
+          <testcase name="test_DK06_password_at_or_above_minimum_is_accepted with data set &quot;DK07_9_ky_tu&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="103" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="3" time="0.023467"/>
+        </testsuite>
+        <testcase name="test_DK08_password_confirmation_mismatch_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="112" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.027021"/>
+        <testcase name="test_DK09_name_with_255_characters_is_accepted" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="118" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="3" time="0.022808"/>
+        <testcase name="test_DK10_name_with_256_characters_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="126" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="6" time="0.028203"/>
+        <testsuite name="Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK11_invalid_phone_is_rejected" tests="5" assertions="10" errors="0" failures="5" skipped="0" time="0.133496">
+          <testcase name="test_DK11_invalid_phone_is_rejected with data set &quot;chu_cai&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="144" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="2" time="0.025150">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK11_invalid_phone_is_rejected with data set "chu_cai"&#13;
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'http://localhost/register'
++'http://localhost/home'
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:377
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:205
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:21
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:146</failure>
+          </testcase>
+          <testcase name="test_DK11_invalid_phone_is_rejected with data set &quot;qua_ngan&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="144" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="2" time="0.025306">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK11_invalid_phone_is_rejected with data set "qua_ngan"&#13;
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'http://localhost/register'
++'http://localhost/home'
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:377
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:205
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:21
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:146</failure>
+          </testcase>
+          <testcase name="test_DK11_invalid_phone_is_rejected with data set &quot;thieu_so_0&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="144" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="2" time="0.027316">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK11_invalid_phone_is_rejected with data set "thieu_so_0"&#13;
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'http://localhost/register'
++'http://localhost/home'
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:377
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:205
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:21
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:146</failure>
+          </testcase>
+          <testcase name="test_DK11_invalid_phone_is_rejected with data set &quot;qua_dai&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="144" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="2" time="0.023625">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK11_invalid_phone_is_rejected with data set "qua_dai"&#13;
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'http://localhost/register'
++'http://localhost/home'
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:377
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:205
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:21
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:146</failure>
+          </testcase>
+          <testcase name="test_DK11_invalid_phone_is_rejected with data set &quot;co_ky_tu_la&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="144" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="2" time="0.032100">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK11_invalid_phone_is_rejected with data set "co_ky_tu_la"&#13;
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'http://localhost/register'
++'http://localhost/home'
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:377
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:205
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:21
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:146</failure>
+          </testcase>
+        </testsuite>
+        <testsuite name="Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK11b_valid_phone_is_accepted" tests="3" assertions="9" errors="0" failures="0" skipped="0" time="0.079025">
+          <testcase name="test_DK11b_valid_phone_is_accepted with data set &quot;dau_0_di_dong&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="160" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="3" time="0.023875"/>
+          <testcase name="test_DK11b_valid_phone_is_accepted with data set &quot;dau_84&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="160" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="3" time="0.024573"/>
+          <testcase name="test_DK11b_valid_phone_is_accepted with data set &quot;may_ban&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="160" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="3" time="0.030577"/>
+        </testsuite>
+        <testcase name="test_DK13_phone_and_address_are_saved" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="168" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="4" time="0.030817">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\RegisterBlackBoxTest::test_DK13_phone_and_address_are_saved&#13;
+Failed asserting that '&lt;!DOCTYPE html&gt;\n
+&lt;html lang="vi"&gt;\n
+&lt;head&gt;\n
+    &lt;meta charset="UTF-8"&gt;\n
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;\n
+    &lt;title&gt;Thông tin cá nhân - Cửa hàng rau củ quả sạch&lt;/title&gt;\n
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;\n
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;\n
+    &lt;link rel="stylesheet" href="http://localhost/css/style.css"&gt;\n
+    &lt;meta name="csrf-token" content="2IODM1AJi3Lw4MVz8jdQe115AUt8vI8E5FZEQlMp"&gt;\n
+    &lt;/head&gt;\n
+&lt;body&gt;\n
+    &lt;header&gt;\n
+        &lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;\n
+            &lt;div class="container"&gt;\n
+                &lt;a class="navbar-brand" href="http://localhost"&gt;\n
+                    &lt;img src="http://localhost/images/logo.webp" alt="Logo" height="40"&gt;\n
+                    Rau Củ Quả Sạch\n
+                &lt;/a&gt;\n
+                &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;\n
+                    &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;\n
+                &lt;/button&gt;\n
+                &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;\n
+                    &lt;ul class="navbar-nav me-auto"&gt;\n
+                        &lt;li class="nav-item"&gt;\n
+                            &lt;a class="nav-link" href="http://localhost/home"&gt;Trang chủ&lt;/a&gt;\n
+                        &lt;/li&gt;\n
+                        &lt;li class="nav-item"&gt;\n
+                            &lt;a class="nav-link" href="http://localhost/products"&gt;Sản phẩm&lt;/a&gt;\n
+                        &lt;/li&gt;\n
+                    &lt;/ul&gt;\n
+\n
+                   \n
+                    &lt;ul class="navbar-nav"&gt;\n
+                        &lt;li class="nav-item"&gt;\n
+                            &lt;a class="nav-link" href="http://localhost/cart"&gt;\n
+                                &lt;i class="fas fa-shopping-cart"&gt;&lt;/i&gt; Giỏ hàng\n
+                                \n
+                            &lt;/a&gt;\n
+                        &lt;/li&gt;\n
+\n
+                                                    &lt;li class="nav-item dropdown"&gt;\n
+                                &lt;a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"&gt;\n
+                                    &lt;i class="fas fa-user"&gt;&lt;/i&gt; Nguyen Van A\n
+                                &lt;/a&gt;\n
+                                &lt;ul class="dropdown-menu dropdown-menu-end"&gt;\n
+                                    &lt;li&gt;&lt;a class="dropdown-item" href="http://localhost/profile"&gt;Thông tin cá nhân&lt;/a&gt;&lt;/li&gt;\n
+                                    &lt;li&gt;&lt;a class="dropdown-item" href="http://localhost/orders"&gt;Đơn hàng của tôi&lt;/a&gt;&lt;/li&gt;\n
+                                    &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;\n
+                                    &lt;li&gt;\n
+                                        &lt;form action="http://localhost/logout" method="POST"&gt;\n
+                                            &lt;input type="hidden" name="_token" value="2IODM1AJi3Lw4MVz8jdQe115AUt8vI8E5FZEQlMp" autocomplete="off"&gt;                                            &lt;button type="submit" class="dropdown-item"&gt;Đăng xuất&lt;/button&gt;\n
+                                        &lt;/form&gt;\n
+                                    &lt;/li&gt;\n
+                                &lt;/ul&gt;\n
+                            &lt;/li&gt;\n
+                                            &lt;/ul&gt;\n
+                &lt;/div&gt;\n
+            &lt;/div&gt;\n
+        &lt;/nav&gt;\n
+    &lt;/header&gt;\n
+\n
+    &lt;main class="py-4"&gt;\n
+        &lt;div class="container"&gt;\n
+            &lt;div class="row"&gt;\n
+    &lt;div class="col-md-3"&gt;\n
+        &lt;div class="card mb-4"&gt;\n
+            &lt;div class="card-body text-center"&gt;\n
+                &lt;img src="http://localhost/images/avatars/default_avt.jpg" alt="Avatar" class="rounded-circle img-fluid" style="width: 150px;"&gt;\n
+                &lt;h5 class="my-3"&gt;Nguyen Van A&lt;/h5&gt;\n
+                &lt;p class="text-muted mb-1"&gt;Khách hàng&lt;/p&gt;\n
+                &lt;p class="text-muted mb-4"&gt;nguyenvana@example.com&lt;/p&gt;\n
+                &lt;div class="d-flex justify-content-center mb-2"&gt;\n
+                    &lt;button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#changeAvatarModal"&gt;\n
+                        Đổi ảnh đại diện\n
+                    &lt;/button&gt;\n
+                &lt;/div&gt;\n
+            &lt;/div&gt;\n
+        &lt;/div&gt;\n
+\n
+        &lt;div class="card mb-4"&gt;\n
+            &lt;div class="card-body"&gt;\n
+                &lt;ul class="list-group list-group-flush"&gt;\n
+                    &lt;li class="list-group-item d-flex justify-content-between align-items-center p-3"&gt;\n
+                        &lt;a href="http://localhost/profile" class="text-decoration-none text-dark w-100"&gt;\n
+                            &lt;i class="fas fa-user fa-fw me-3"&gt;&lt;/i&gt;Thông tin cá nhân\n
+                        &lt;/a&gt;\n
+                    &lt;/li&gt;\n
+                    &lt;li class="list-group-item d-flex justify-content-between align-items-center p-3"&gt;\n
+                        &lt;a href="http://localhost/orders" class="text-decoration-none text-dark w-100"&gt;\n
+                            &lt;i class="fas fa-shopping-bag fa-fw me-3"&gt;&lt;/i&gt;Đơn hàng của tôi\n
+                        &lt;/a&gt;\n
+                    &lt;/li&gt;\n
+                    &lt;li class="list-group-item d-flex justify-content-between align-items-center p-3"&gt;\n
+                        &lt;a href="" class="text-decoration-none text-dark w-100"&gt;\n
+                            &lt;i class="fas fa-lock fa-fw me-3"&gt;&lt;/i&gt;Đổi mật khẩu\n
+                        &lt;/a&gt;\n
+                    &lt;/li&gt;\n
+                &lt;/ul&gt;\n
+            &lt;/div&gt;\n
+        &lt;/div&gt;\n
+    &lt;/div&gt;\n
+\n
+    &lt;div class="col-md-9"&gt;\n
+        &lt;div class="card mb-4"&gt;\n
+            &lt;div class="card-header"&gt;\n
+                &lt;h5 class="mb-0"&gt;Thông tin cá nhân&lt;/h5&gt;\n
+            &lt;/div&gt;\n
+            &lt;div class="card-body"&gt;\n
+                \n
+                &lt;form method="POST" action="http://localhost/profile/update" enctype="multipart/form-data"&gt;\n
+                    &lt;input type="hidden" name="_token" value="2IODM1AJi3Lw4MVz8jdQe115AUt8vI8E5FZEQlMp" autocomplete="off"&gt;\n
+                    &lt;div class="row mb-3"&gt;\n
+                        &lt;div class="col-md-6"&gt;\n
+                            &lt;label for="name" class="form-label"&gt;Họ và tên&lt;/label&gt;\n
+                            &lt;input type="text" class="form-control " id="name" name="name" value="Nguyen Van A" required&gt;\n
+                                                    &lt;/div&gt;\n
+                        &lt;div class="col-md-6"&gt;\n
+                            &lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;\n
+                            &lt;input type="email" class="form-control" id="email" value="nguyenvana@example.com" readonly&gt;\n
+                        &lt;/div&gt;\n
+                    &lt;/div&gt;\n
+\n
+                    &lt;div class="row mb-3"&gt;\n
+                        &lt;div class="col-md-6"&gt;\n
+                            &lt;label for="phone" class="form-label"&gt;Số điện thoại&lt;/label&gt;\n
+                            &lt;input type="text" class="form-control " id="phone" name="phone" value="" required&gt;\n
+                                                    &lt;/div&gt;\n
+                        &lt;div class="col-md-6"&gt;\n
+                            &lt;label for="birthday" class="form-label"&gt;Ngày sinh&lt;/label&gt;\n
+                            &lt;input type="date" class="form-control " id="birthday" name="birthday" value=""&gt;\n
+                                                    &lt;/div&gt;\n
+                    &lt;/div&gt;\n
+\n
+                    &lt;div class="mb-3"&gt;\n
+                        &lt;label class="form-label d-block"&gt;Giới tính&lt;/label&gt;\n
+                        &lt;div class="form-check form-check-inline"&gt;\n
+                            &lt;input class="form-check-input" type="radio" name="gender" id="male" value="male" &gt;\n
+                            &lt;label class="form-check-label" for="male"&gt;Nam&lt;/label&gt;\n
+                        &lt;/div&gt;\n
+                        &lt;div class="form-check form-check-inline"&gt;\n
+                            &lt;input class="form-check-input" type="radio" name="gender" id="female" value="female" &gt;\n
+                            &lt;label class="form-check-label" for="female"&gt;Nữ&lt;/label&gt;\n
+                        &lt;/div&gt;\n
+                        &lt;div class="form-check form-check-inline"&gt;\n
+                            &lt;input class="form-check-input" type="radio" name="gender" id="other" value="other" &gt;\n
+                            &lt;label class="form-check-label" for="other"&gt;Khác&lt;/label&gt;\n
+                        &lt;/div&gt;\n
+                    &lt;/div&gt;\n
+\n
+                    &lt;button type="submit" class="btn btn-success"&gt;Cập nhật thông tin&lt;/button&gt;\n
+                &lt;/form&gt;\n
+            &lt;/div&gt;\n
+        &lt;/div&gt;\n
+\n
+        &lt;div class="card"&gt;\n
+            &lt;div class="card-header"&gt;\n
+                &lt;h5 class="mb-0"&gt;Địa chỉ mặc định&lt;/h5&gt;\n
+            &lt;/div&gt;\n
+            &lt;div class="card-body"&gt;\n
+                                    &lt;p&gt;Bạn chưa có địa chỉ mặc định.&lt;/p&gt;\n
+                    &lt;a href="" class="btn btn-primary"&gt;Thêm địa chỉ mới&lt;/a&gt;\n
+                            &lt;/div&gt;\n
+        &lt;/div&gt;\n
+    &lt;/div&gt;\n
+&lt;/div&gt;\n
+        &lt;/div&gt;\n
+    &lt;/main&gt;\n
+\n
+    &lt;footer class="bg-dark text-white py-4 mt-5"&gt;\n
+        &lt;div class="container"&gt;\n
+            &lt;div class="row"&gt;\n
+                &lt;div class="col-md-4"&gt;\n
+                    &lt;h5&gt;Về chúng tôi&lt;/h5&gt;\n
+                    &lt;p&gt;Cửa hàng rau củ quả sạch cung cấp các sản phẩm tươi ngon, an toàn và chất lượng cao.&lt;/p&gt;\n
+                &lt;/div&gt;\n
+                &lt;div class="col-md-4"&gt;\n
+                    &lt;h5&gt;Liên hệ&lt;/h5&gt;\n
+                    &lt;p&gt;&lt;i class="fas fa-map-marker-alt"&gt;&lt;/i&gt; 123 Đường ABC, Quận XYZ, TP.HCM&lt;/p&gt;\n
+                    &lt;p&gt;&lt;i class="fas fa-phone"&gt;&lt;/i&gt; 0123 456 789&lt;/p&gt;\n
+                    &lt;p&gt;&lt;i class="fas fa-envelope"&gt;&lt;/i&gt; info@raucusach.com&lt;/p&gt;\n
+                &lt;/div&gt;\n
+                &lt;div class="col-md-4"&gt;\n
+                    &lt;h5&gt;Theo dõi chúng tôi&lt;/h5&gt;\n
+                    &lt;div class="social-links"&gt;\n
+                        &lt;a href="#" class="text-white me-2"&gt;&lt;i class="fab fa-facebook-f"&gt;&lt;/i&gt;&lt;/a&gt;\n
+                        &lt;a href="#" class="text-white me-2"&gt;&lt;i class="fab fa-twitter"&gt;&lt;/i&gt;&lt;/a&gt;\n
+                        &lt;a href="#" class="text-white me-2"&gt;&lt;i class="fab fa-instagram"&gt;&lt;/i&gt;&lt;/a&gt;\n
+                    &lt;/div&gt;\n
+                &lt;/div&gt;\n
+            &lt;/div&gt;\n
+            &lt;hr&gt;\n
+            &lt;div class="text-center"&gt;\n
+                &lt;p&gt;&amp;copy; 2026 Cửa hàng rau củ quả sạch. Tất cả quyền được bảo lưu.&lt;/p&gt;\n
+            &lt;/div&gt;\n
+        &lt;/div&gt;\n
+    &lt;/footer&gt;\n
+\n
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;\n
+    &lt;script src="http://localhost/js/app.js"&gt;&lt;/script&gt;\n
+    &lt;/body&gt;\n
+&lt;/html&gt;\n
+' [UTF-8](length: 10553) contains "0987654321" [ASCII](length: 10).
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:655
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php:173</failure>
+        </testcase>
+        <testcase name="test_DK14_client_cannot_choose_admin_role" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="178" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="3" time="0.023189"/>
+        <testcase name="test_DK15_password_is_not_stored_in_plain_text" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\RegisterBlackBoxTest.php" line="186" class="Tests\Feature\BlackBox\RegisterBlackBoxTest" classname="Tests.Feature.BlackBox.RegisterBlackBoxTest" assertions="3" time="0.033838"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="BlackBoxProfile" tests="16" assertions="35" errors="0" failures="0" skipped="0" time="0.603355">
+      <testsuite name="Tests\Feature\BlackBox\ProfileBlackBoxTest" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" tests="16" assertions="35" errors="0" failures="0" skipped="0" time="0.603355">
+        <testcase name="test_HS01_valid_update_is_saved_and_shown" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="20" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="6" time="0.030933"/>
+        <testsuite name="Tests\Feature\BlackBox\ProfileBlackBoxTest::test_HS02_missing_required_field_is_rejected" tests="2" assertions="6" errors="0" failures="0" skipped="0" time="0.077125">
+          <testcase name="test_HS02_missing_required_field_is_rejected with data set &quot;thieu_ho_ten&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="36" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="3" time="0.034895"/>
+          <testcase name="test_HS02_missing_required_field_is_rejected with data set &quot;thieu_sdt&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="36" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="3" time="0.042230"/>
+        </testsuite>
+        <testcase name="test_HS03_phone_with_20_characters_is_accepted" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="47" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="1" time="0.031462"/>
+        <testcase name="test_HS03b_phone_with_21_characters_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="54" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="2" time="0.033346"/>
+        <testcase name="test_HS04_birthday_yesterday_is_accepted" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="62" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="1" time="0.033657"/>
+        <testsuite name="Tests\Feature\BlackBox\ProfileBlackBoxTest::test_HS04b_birthday_today_or_future_is_rejected" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.095255">
+          <testcase name="test_HS04b_birthday_today_or_future_is_rejected with data set &quot;hom_nay&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="79" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="2" time="0.034136"/>
+          <testcase name="test_HS04b_birthday_today_or_future_is_rejected with data set &quot;ngay_mai&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="79" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="2" time="0.030549"/>
+          <testcase name="test_HS04b_birthday_today_or_future_is_rejected with data set &quot;nam_sau&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="79" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="2" time="0.030570"/>
+        </testsuite>
+        <testcase name="test_HS04c_malformed_birthday_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="88" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="2" time="0.033742"/>
+        <testsuite name="Tests\Feature\BlackBox\ProfileBlackBoxTest::test_HS05_valid_gender_is_accepted" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="0.102079">
+          <testcase name="test_HS05_valid_gender_is_accepted with data set &quot;nam&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="102" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="1" time="0.034053"/>
+          <testcase name="test_HS05_valid_gender_is_accepted with data set &quot;nu&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="102" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="1" time="0.038280"/>
+          <testcase name="test_HS05_valid_gender_is_accepted with data set &quot;khac&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="102" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="1" time="0.029746"/>
+        </testsuite>
+        <testcase name="test_HS05b_unknown_gender_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="109" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="2" time="0.025480"/>
+        <testcase name="test_HS06_profile_form_cannot_change_email_or_role" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="117" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="2" time="0.115332"/>
+        <testcase name="test_HS07_guest_cannot_open_or_update_profile" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\ProfileBlackBoxTest.php" line="130" class="Tests\Feature\BlackBox\ProfileBlackBoxTest" classname="Tests.Feature.BlackBox.ProfileBlackBoxTest" assertions="4" time="0.024946"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="BlackBoxCart" tests="25" assertions="44" errors="8" failures="4" skipped="0" time="0.811929">
+      <testsuite name="Tests\Feature\BlackBox\CartBlackBoxTest" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" tests="25" assertions="44" errors="8" failures="4" skipped="0" time="0.811929">
+        <testcase name="test_GH01_add_one_product" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="25" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="4" time="0.040974"/>
+        <testcase name="test_GH01b_default_quantity_is_one" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="37" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="2" time="0.030520"/>
+        <testcase name="test_GH02_add_exactly_the_stock" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="48" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="2" time="0.030351"/>
+        <testcase name="test_GH03_add_more_than_stock_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="59" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="3" time="0.030079"/>
+        <testsuite name="Tests\Feature\BlackBox\CartBlackBoxTest::test_GH04_invalid_quantity_is_rejected" tests="4" assertions="4" errors="0" failures="4" skipped="0" time="0.112893">
+          <testcase name="test_GH04_invalid_quantity_is_rejected with data set &quot;GH04_bang_0&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="82" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="1" time="0.028642">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH04_invalid_quantity_is_rejected with data set "GH04_bang_0"&#13;
+Session is missing expected key [errors].
+Failed asserting that false is true.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1486
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1563
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:87</failure>
+          </testcase>
+          <testcase name="test_GH04_invalid_quantity_is_rejected with data set &quot;GH05_so_am&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="82" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="1" time="0.031092">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH04_invalid_quantity_is_rejected with data set "GH05_so_am"&#13;
+Session is missing expected key [errors].
+Failed asserting that false is true.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1486
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1563
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:87</failure>
+          </testcase>
+          <testcase name="test_GH04_invalid_quantity_is_rejected with data set &quot;GH06_so_thap_phan&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="82" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="1" time="0.028930">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH04_invalid_quantity_is_rejected with data set "GH06_so_thap_phan"&#13;
+Session is missing expected key [errors].
+Failed asserting that false is true.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1486
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1563
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:87</failure>
+          </testcase>
+          <testcase name="test_GH04_invalid_quantity_is_rejected with data set &quot;GH06b_chu&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="82" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="1" time="0.024228">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH04_invalid_quantity_is_rejected with data set "GH06b_chu"&#13;
+Session is missing expected key [errors].
+Failed asserting that false is true.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1486
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1563
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:87</failure>
+          </testcase>
+        </testsuite>
+        <testcase name="test_GH07_adding_same_product_twice_merges_into_one_line" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="94" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="3" time="0.039532"/>
+        <testcase name="test_GH08_out_of_stock_product_cannot_be_added" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="108" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="2" time="0.032055"/>
+        <testcase name="test_GH08b_missing_product_returns_404" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="119" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="1" time="0.025824"/>
+        <testcase name="test_GH09_remove_one_of_two_products" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="127" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="6" time="0.044690"/>
+        <testcase name="test_GH10_remove_last_product_shows_empty_cart" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="152" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="4" time="0.038715"/>
+        <testcase name="test_GH10b_remove_missing_line_fails_without_changes" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="167" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="3" time="0.033953"/>
+        <testcase name="test_GH11_increase_quantity_in_cart" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="180" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="0" time="0.029235">
+          <error type="Symfony\Component\Routing\Exception\RouteNotFoundException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH11_increase_quantity_in_cart&#13;
+Symfony\Component\Routing\Exception\RouteNotFoundException: Route [cart.update] not defined.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:526
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:883
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:186</error>
+        </testcase>
+        <testcase name="test_GH11b_decrease_quantity_in_cart" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="195" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="0" time="0.029086">
+          <error type="Symfony\Component\Routing\Exception\RouteNotFoundException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH11b_decrease_quantity_in_cart&#13;
+Symfony\Component\Routing\Exception\RouteNotFoundException: Route [cart.update] not defined.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:526
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:883
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:201</error>
+        </testcase>
+        <testcase name="test_GH11c_update_beyond_stock_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="209" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="0" time="0.027117">
+          <error type="Symfony\Component\Routing\Exception\RouteNotFoundException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH11c_update_beyond_stock_is_rejected&#13;
+Symfony\Component\Routing\Exception\RouteNotFoundException: Route [cart.update] not defined.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:526
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:883
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:215</error>
+        </testcase>
+        <testsuite name="Tests\Feature\BlackBox\CartBlackBoxTest::test_GH11d_update_with_invalid_quantity_is_rejected" tests="4" assertions="0" errors="4" failures="0" skipped="0" time="0.125387">
+          <testcase name="test_GH11d_update_with_invalid_quantity_is_rejected with data set &quot;bang_0&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="229" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="0" time="0.030578">
+            <error type="Symfony\Component\Routing\Exception\RouteNotFoundException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH11d_update_with_invalid_quantity_is_rejected with data set "bang_0"&#13;
+Symfony\Component\Routing\Exception\RouteNotFoundException: Route [cart.update] not defined.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:526
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:883
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:235</error>
+          </testcase>
+          <testcase name="test_GH11d_update_with_invalid_quantity_is_rejected with data set &quot;so_am&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="229" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="0" time="0.037372">
+            <error type="Symfony\Component\Routing\Exception\RouteNotFoundException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH11d_update_with_invalid_quantity_is_rejected with data set "so_am"&#13;
+Symfony\Component\Routing\Exception\RouteNotFoundException: Route [cart.update] not defined.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:526
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:883
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:235</error>
+          </testcase>
+          <testcase name="test_GH11d_update_with_invalid_quantity_is_rejected with data set &quot;thap_phan&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="229" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="0" time="0.027993">
+            <error type="Symfony\Component\Routing\Exception\RouteNotFoundException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH11d_update_with_invalid_quantity_is_rejected with data set "thap_phan"&#13;
+Symfony\Component\Routing\Exception\RouteNotFoundException: Route [cart.update] not defined.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:526
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:883
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:235</error>
+          </testcase>
+          <testcase name="test_GH11d_update_with_invalid_quantity_is_rejected with data set &quot;chu&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="229" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="0" time="0.029444">
+            <error type="Symfony\Component\Routing\Exception\RouteNotFoundException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH11d_update_with_invalid_quantity_is_rejected with data set "chu"&#13;
+Symfony\Component\Routing\Exception\RouteNotFoundException: Route [cart.update] not defined.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:526
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:883
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:235</error>
+          </testcase>
+        </testsuite>
+        <testcase name="test_GH16_user_cannot_change_or_remove_another_users_item" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="242" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="1" time="0.033425">
+          <error type="Symfony\Component\Routing\Exception\RouteNotFoundException">Tests\Feature\BlackBox\CartBlackBoxTest::test_GH16_user_cannot_change_or_remove_another_users_item&#13;
+Symfony\Component\Routing\Exception\RouteNotFoundException: Route [cart.update] not defined.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:526
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:883
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php:254</error>
+        </testcase>
+        <testcase name="test_GH17_guest_cannot_use_cart" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="261" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="5" time="0.043895"/>
+        <testcase name="test_GH18_new_user_sees_empty_cart" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="272" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="2" time="0.028170"/>
+        <testcase name="test_GH19_each_user_sees_only_their_own_cart" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\CartBlackBoxTest.php" line="278" class="Tests\Feature\BlackBox\CartBlackBoxTest" classname="Tests.Feature.BlackBox.CartBlackBoxTest" assertions="2" time="0.036028"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="BlackBoxOrder" tests="15" assertions="38" errors="0" failures="5" skipped="0" time="0.490864">
+      <testsuite name="Tests\Feature\BlackBox\OrderBlackBoxTest" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" tests="15" assertions="38" errors="0" failures="5" skipped="0" time="0.490864">
+        <testcase name="test_GH12_checkout_cod_creates_pending_unpaid_order_and_empties_cart" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="35" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="9" time="0.038171"/>
+        <testcase name="test_GH12b_order_appears_in_order_history" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="54" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="2" time="0.041196"/>
+        <testcase name="test_GH13_checkout_with_empty_cart_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="65" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="2" time="0.025796"/>
+        <testcase name="test_GH13b_invalid_payment_method_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="76" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="1" time="0.033207">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\OrderBlackBoxTest::test_GH13b_invalid_payment_method_is_rejected&#13;
+Session is missing expected key [errors].
+Failed asserting that false is true.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1486
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1563
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php:81</failure>
+        </testcase>
+        <testcase name="test_GH13c_delivery_date_in_the_past_is_rejected" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="87" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="1" time="0.035969">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\OrderBlackBoxTest::test_GH13c_delivery_date_in_the_past_is_rejected&#13;
+Session is missing expected key [errors].
+Failed asserting that false is true.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1486
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1563
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php:94</failure>
+        </testcase>
+        <testcase name="test_GH14_qr_checkout_then_cancel_returns_items_to_cart" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="100" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="6" time="0.040496"/>
+        <testcase name="test_GH14b_cancelling_twice_is_harmless" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="116" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="3" time="0.040234"/>
+        <testsuite name="Tests\Feature\BlackBox\OrderBlackBoxTest::test_GH15_order_in_final_or_paid_state_cannot_be_cancelled" tests="3" assertions="3" errors="0" failures="3" skipped="0" time="0.086447">
+          <testcase name="test_GH15_order_in_final_or_paid_state_cannot_be_cancelled with data set &quot;da_hoan_thanh_va_da_tra_tien&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="138" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="1" time="0.024026">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\OrderBlackBoxTest::test_GH15_order_in_final_or_paid_state_cannot_be_cancelled with data set "da_hoan_thanh_va_da_tra_tien"&#13;
+Expected response status code [422] but received 200.
+Failed asserting that 200 is identical to 422.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:174
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php:143</failure>
+          </testcase>
+          <testcase name="test_GH15_order_in_final_or_paid_state_cannot_be_cancelled with data set &quot;dang_xu_ly&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="138" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="1" time="0.034619">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\OrderBlackBoxTest::test_GH15_order_in_final_or_paid_state_cannot_be_cancelled with data set "dang_xu_ly"&#13;
+Expected response status code [422] but received 200.
+Failed asserting that 200 is identical to 422.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:174
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php:143</failure>
+          </testcase>
+          <testcase name="test_GH15_order_in_final_or_paid_state_cannot_be_cancelled with data set &quot;cho_xu_ly_nhung_da_tra_tien&quot;" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="138" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="1" time="0.027802">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\BlackBox\OrderBlackBoxTest::test_GH15_order_in_final_or_paid_state_cannot_be_cancelled with data set "cho_xu_ly_nhung_da_tra_tien"&#13;
+Expected response status code [422] but received 200.
+Failed asserting that 200 is identical to 422.
+&#13;
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:174
+D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php:143</failure>
+          </testcase>
+        </testsuite>
+        <testcase name="test_GH20_user_cannot_view_another_users_order" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="149" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="1" time="0.028213"/>
+        <testcase name="test_GH21_user_cannot_cancel_another_users_order" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="158" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="2" time="0.031292"/>
+        <testcase name="test_GH22_order_keeps_price_at_purchase_time" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="169" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="2" time="0.033929"/>
+        <testcase name="test_AD01_admin_can_confirm_payment" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="182" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="4" time="0.028938"/>
+        <testcase name="test_AD02_normal_user_cannot_confirm_payment" file="D:\pka\dgia kiểm định\DGKD_Website_ban_rau_cu_online\tests\Feature\BlackBox\OrderBlackBoxTest.php" line="196" class="Tests\Feature\BlackBox\OrderBlackBoxTest" classname="Tests.Feature.BlackBox.OrderBlackBoxTest" assertions="2" time="0.026974"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

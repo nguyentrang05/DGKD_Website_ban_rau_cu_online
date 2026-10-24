@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Test Documentation</title>
+        <style>
+            body {
+                text-rendering: optimizeLegibility;
+                font-family: Source SansSerif Pro, Arial, sans-serif;
+                font-variant-ligatures: common-ligatures;
+                font-kerning: normal;
+                margin-left: 2rem;
+                background-color: #fff;
+                color: #000;
+            }
+
+            body > ul > li {
+                font-size: larger;
+            }
+
+            h2 {
+                font-size: larger;
+                text-decoration-line: underline;
+                text-decoration-thickness: 2px;
+                margin: 0;
+                padding: 0.5rem 0;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0 0 2rem;
+                padding: 0 0 0 1rem;
+                text-indent: -1rem;
+            }
+
+            .success:before {
+                color: #4e9a06;
+                content: '✓';
+                padding-right: 0.5rem;
+            }
+
+            .defect {
+                color: #a40000;
+            }
+
+            .defect:before {
+                color: #a40000;
+                content: '✗';
+                padding-right: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Cart Black Box (Tests\Feature\BlackBox\CartBlackBox)</h2>
+        <ul>
+            <li class="success">GH01 add one product</li>
+            <li class="success">GH01b default quantity is one</li>
+            <li class="success">GH02 add exactly the stock</li>
+            <li class="success">GH03 add more than stock is rejected</li>
+            <li class="defect">GH04 invalid quantity is rejected with data set "GH04_bang_0"</li>
+            <li class="defect">GH04 invalid quantity is rejected with data set "GH05_so_am"</li>
+            <li class="defect">GH04 invalid quantity is rejected with data set "GH06_so_thap_phan"</li>
+            <li class="defect">GH04 invalid quantity is rejected with data set "GH06b_chu"</li>
+            <li class="success">GH07 adding same product twice merges into one line</li>
+            <li class="success">GH08 out of stock product cannot be added</li>
+            <li class="success">GH08b missing product returns 404</li>
+            <li class="success">GH09 remove one of two products</li>
+            <li class="success">GH10 remove last product shows empty cart</li>
+            <li class="success">GH10b remove missing line fails without changes</li>
+            <li class="defect">GH11 increase quantity in cart</li>
+            <li class="defect">GH11b decrease quantity in cart</li>
+            <li class="defect">GH11c update beyond stock is rejected</li>
+            <li class="defect">GH11d update with invalid quantity is rejected with data set "bang_0"</li>
+            <li class="defect">GH11d update with invalid quantity is rejected with data set "so_am"</li>
+            <li class="defect">GH11d update with invalid quantity is rejected with data set "thap_phan"</li>
+            <li class="defect">GH11d update with invalid quantity is rejected with data set "chu"</li>
+            <li class="defect">GH16 user cannot change or remove another users item</li>
+            <li class="success">GH17 guest cannot use cart</li>
+            <li class="success">GH18 new user sees empty cart</li>
+            <li class="success">GH19 each user sees only their own cart</li>
+        </ul>
+        <h2>Login Black Box (Tests\Feature\BlackBox\LoginBlackBox)</h2>
+        <ul>
+            <li class="success">DN01 user login goes to home</li>
+            <li class="success">DN02 admin login goes to dashboard</li>
+            <li class="success">DN03 wrong password is rejected</li>
+            <li class="success">DN04 unknown email gives same message as wrong password</li>
+            <li class="success">DN05 empty credentials are rejected</li>
+            <li class="success">DN06 invalid email format is rejected with data set "thieu_@"</li>
+            <li class="success">DN06 invalid email format is rejected with data set "thieu_ten_mien"</li>
+            <li class="success">DN06 invalid email format is rejected with data set "co_khoang_trang"</li>
+            <li class="success">DN06b password is case sensitive</li>
+            <li class="success">DN07 logged in user is redirected away from login page</li>
+            <li class="success">DN07b logged in admin is redirected away from login page</li>
+            <li class="success">DN08 guest is redirected to login with data set "gio_hang"</li>
+            <li class="success">DN08 guest is redirected to login with data set "don_hang"</li>
+            <li class="success">DN08 guest is redirected to login with data set "ho_so"</li>
+            <li class="success">DN08 guest is redirected to login with data set "trang_chu_user"</li>
+            <li class="success">DN08 guest is redirected to login with data set "admin"</li>
+            <li class="success">DN09 normal user cannot open admin area</li>
+            <li class="success">DN10 login and register pages are available with masked password</li>
+            <li class="success">DN11 logout ends the session</li>
+            <li class="success">DN12 product list is public</li>
+            <li class="success">DN13 missing product returns 404</li>
+        </ul>
+        <h2>Order Black Box (Tests\Feature\BlackBox\OrderBlackBox)</h2>
+        <ul>
+            <li class="success">GH12 checkout cod creates pending unpaid order and empties cart</li>
+            <li class="success">GH12b order appears in order history</li>
+            <li class="success">GH13 checkout with empty cart is rejected</li>
+            <li class="defect">GH13b invalid payment method is rejected</li>
+            <li class="defect">GH13c delivery date in the past is rejected</li>
+            <li class="success">GH14 qr checkout then cancel returns items to cart</li>
+            <li class="success">GH14b cancelling twice is harmless</li>
+            <li class="defect">GH15 order in final or paid state cannot be cancelled with data set "da_hoan_thanh_va_da_tra_tien"</li>
+            <li class="defect">GH15 order in final or paid state cannot be cancelled with data set "dang_xu_ly"</li>
+            <li class="defect">GH15 order in final or paid state cannot be cancelled with data set "cho_xu_ly_nhung_da_tra_tien"</li>
+            <li class="success">GH20 user cannot view another users order</li>
+            <li class="success">GH21 user cannot cancel another users order</li>
+            <li class="success">GH22 order keeps price at purchase time</li>
+            <li class="success">AD01 admin can confirm payment</li>
+            <li class="success">AD02 normal user cannot confirm payment</li>
+        </ul>
+        <h2>Profile Black Box (Tests\Feature\BlackBox\ProfileBlackBox)</h2>
+        <ul>
+            <li class="success">HS01 valid update is saved and shown</li>
+            <li class="success">HS02 missing required field is rejected with data set "thieu_ho_ten"</li>
+            <li class="success">HS02 missing required field is rejected with data set "thieu_sdt"</li>
+            <li class="success">HS03 phone with 20 characters is accepted</li>
+            <li class="success">HS03b phone with 21 characters is rejected</li>
+            <li class="success">HS04 birthday yesterday is accepted</li>
+            <li class="success">HS04b birthday today or future is rejected with data set "hom_nay"</li>
+            <li class="success">HS04b birthday today or future is rejected with data set "ngay_mai"</li>
+            <li class="success">HS04b birthday today or future is rejected with data set "nam_sau"</li>
+            <li class="success">HS04c malformed birthday is rejected</li>
+            <li class="success">HS05 valid gender is accepted with data set "nam"</li>
+            <li class="success">HS05 valid gender is accepted with data set "nu"</li>
+            <li class="success">HS05 valid gender is accepted with data set "khac"</li>
+            <li class="success">HS05b unknown gender is rejected</li>
+            <li class="success">HS06 profile form cannot change email or role</li>
+            <li class="success">HS07 guest cannot open or update profile</li>
+        </ul>
+        <h2>Register Black Box (Tests\Feature\BlackBox\RegisterBlackBox)</h2>
+        <ul>
+            <li class="success">DK01 valid data creates account and logs in</li>
+            <li class="success">DK02 missing required field is rejected with data set "DK02_thieu_ho_ten"</li>
+            <li class="success">DK02 missing required field is rejected with data set "DK02_thieu_email"</li>
+            <li class="defect">DK02 missing required field is rejected with data set "DK02_thieu_sdt"</li>
+            <li class="success">DK02 missing required field is rejected with data set "DK02_thieu_mat_khau"</li>
+            <li class="defect">DK02 missing required field is rejected with data set "DK12_thieu_dieu_khoan"</li>
+            <li class="success">DK02b name with only spaces is rejected</li>
+            <li class="success">DK03 invalid email is rejected with data set "thieu_@"</li>
+            <li class="success">DK03 invalid email is rejected with data set "thieu_ten_mien"</li>
+            <li class="success">DK03 invalid email is rejected with data set "thieu_phan_ten"</li>
+            <li class="success">DK03 invalid email is rejected with data set "co_khoang_trang"</li>
+            <li class="success">DK04 duplicate email is rejected</li>
+            <li class="success">DK05 password with seven characters is rejected</li>
+            <li class="success">DK06 password at or above minimum is accepted with data set "DK06_8_ky_tu"</li>
+            <li class="success">DK06 password at or above minimum is accepted with data set "DK07_9_ky_tu"</li>
+            <li class="success">DK08 password confirmation mismatch is rejected</li>
+            <li class="success">DK09 name with 255 characters is accepted</li>
+            <li class="success">DK10 name with 256 characters is rejected</li>
+            <li class="defect">DK11 invalid phone is rejected with data set "chu_cai"</li>
+            <li class="defect">DK11 invalid phone is rejected with data set "qua_ngan"</li>
+            <li class="defect">DK11 invalid phone is rejected with data set "thieu_so_0"</li>
+            <li class="defect">DK11 invalid phone is rejected with data set "qua_dai"</li>
+            <li class="defect">DK11 invalid phone is rejected with data set "co_ky_tu_la"</li>
+            <li class="success">DK11b valid phone is accepted with data set "dau_0_di_dong"</li>
+            <li class="success">DK11b valid phone is accepted with data set "dau_84"</li>
+            <li class="success">DK11b valid phone is accepted with data set "may_ban"</li>
+            <li class="defect">DK13 phone and address are saved</li>
+            <li class="success">DK14 client cannot choose admin role</li>
+            <li class="success">DK15 password is not stored in plain text</li>
+        </ul>
+    </body>
+</html>
