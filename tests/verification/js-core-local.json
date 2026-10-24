@@ -1,0 +1,222 @@
+{
+  "generated_at": "2026-10-23T23:25:58.712Z",
+  "node": "v24.19.0",
+  "suite": "core",
+  "environment": "Node VM with a minimal DOM adapter; not a real browser",
+  "project_root": "/workspace/scratch/5a57bee9f61c/extended_source",
+  "total": 42,
+  "passed": 42,
+  "failed": 0,
+  "results": [
+    {
+      "name": "JS01_no_filters_preserve_all_products",
+      "status": "PASS",
+      "milliseconds": 3.863078999999999
+    },
+    {
+      "name": "JS02_search_Cà rốt",
+      "status": "PASS",
+      "milliseconds": 1.4753630000000015
+    },
+    {
+      "name": "JS03_search_rốt",
+      "status": "PASS",
+      "milliseconds": 1.085844999999992
+    },
+    {
+      "name": "JS04_search_RAU XANH",
+      "status": "PASS",
+      "milliseconds": 0.9565910000000031
+    },
+    {
+      "name": "JS05_search_CÀ RỐT",
+      "status": "PASS",
+      "milliseconds": 1.1085700000000003
+    },
+    {
+      "name": "JS06_search_khong-ton-tai",
+      "status": "PASS",
+      "milliseconds": 1.039360000000002
+    },
+    {
+      "name": "JS07_search_@",
+      "status": "PASS",
+      "milliseconds": 1.3342300000000051
+    },
+    {
+      "name": "JS08_search_handler_trims_input_and_resets_page",
+      "status": "PASS",
+      "milliseconds": 25.605029000000002
+    },
+    {
+      "name": "JS09_search_handler_trims_input_and_resets_page",
+      "status": "PASS",
+      "milliseconds": 1.7154040000000066
+    },
+    {
+      "name": "JS10_category_filter",
+      "status": "PASS",
+      "milliseconds": 1.1924159999999802
+    },
+    {
+      "name": "JS11_price_boundary_0-50000",
+      "status": "PASS",
+      "milliseconds": 1.1006780000000163
+    },
+    {
+      "name": "JS12_price_boundary_50000-100000",
+      "status": "PASS",
+      "milliseconds": 1.060276999999985
+    },
+    {
+      "name": "JS13_price_boundary_100000-200000",
+      "status": "PASS",
+      "milliseconds": 0.99601100000001
+    },
+    {
+      "name": "JS14_price_boundary_200000+",
+      "status": "PASS",
+      "milliseconds": 0.9422390000000007
+    },
+    {
+      "name": "JS15_unknown_price_token_uses_existing_default_branch",
+      "status": "PASS",
+      "milliseconds": 1.0077180000000112
+    },
+    {
+      "name": "JS16_combined_category_price_and_search",
+      "status": "PASS",
+      "milliseconds": 1.0881490000000156
+    },
+    {
+      "name": "JS17_combined_filters_no_matches",
+      "status": "PASS",
+      "milliseconds": 1.0876580000000047
+    },
+    {
+      "name": "JS18_sort_price_asc",
+      "status": "PASS",
+      "milliseconds": 1.9045189999999934
+    },
+    {
+      "name": "JS19_sort_price_desc",
+      "status": "PASS",
+      "milliseconds": 1.0779739999999833
+    },
+    {
+      "name": "JS20_sort_popular",
+      "status": "PASS",
+      "milliseconds": 0.9587039999999831
+    },
+    {
+      "name": "JS21_sort_latest",
+      "status": "PASS",
+      "milliseconds": 0.9970919999999808
+    },
+    {
+      "name": "JS22_sort_unknown-sort",
+      "status": "PASS",
+      "milliseconds": 0.9397459999999853
+    },
+    {
+      "name": "JS23_name_sort_orders_by_locale_compare",
+      "status": "PASS",
+      "milliseconds": 3.6335829999999874
+    },
+    {
+      "name": "JS24_product_card_contains_name_price_unit_image_and_detail_link",
+      "status": "PASS",
+      "milliseconds": 1.2074189999999874
+    },
+    {
+      "name": "JS25_out_of_stock_card_is_disabled_with_fallback_image",
+      "status": "PASS",
+      "milliseconds": 1.0547789999999964
+    },
+    {
+      "name": "JS26_empty_results_with_filters_have_clear_button",
+      "status": "PASS",
+      "milliseconds": 1.1519550000000152
+    },
+    {
+      "name": "JS27_empty_catalogue_without_filters_has_distinct_message",
+      "status": "PASS",
+      "milliseconds": 1.0465460000000064
+    },
+    {
+      "name": "JS28_first_page_has_four_cards",
+      "status": "PASS",
+      "milliseconds": 1.2735680000000116
+    },
+    {
+      "name": "JS29_second_page_has_remaining_cards",
+      "status": "PASS",
+      "milliseconds": 1.1708540000000198
+    },
+    {
+      "name": "JS30_pagination_hidden_for_one_page",
+      "status": "PASS",
+      "milliseconds": 0.9915340000000015
+    },
+    {
+      "name": "JS31_pagination_multiple_pages_has_prev_next_and_ellipsis",
+      "status": "PASS",
+      "milliseconds": 1.0316139999999905
+    },
+    {
+      "name": "JS32_page_navigation_accepts_valid_page_and_rejects_zero_or_too_large",
+      "status": "PASS",
+      "milliseconds": 2.016126999999983
+    },
+    {
+      "name": "JS33_clear_filters_resets_controls_state_and_page",
+      "status": "PASS",
+      "milliseconds": 1.444515999999993
+    },
+    {
+      "name": "JS34_filter_controls_update_internal_state_and_reset_page",
+      "status": "PASS",
+      "milliseconds": 1.2626720000000091
+    },
+    {
+      "name": "JS35_update_ui_filter_visibility_and_count",
+      "status": "PASS",
+      "milliseconds": 1.0860460000000103
+    },
+    {
+      "name": "JS36_loading_indicator_both_branches",
+      "status": "PASS",
+      "milliseconds": 0.9123140000000092
+    },
+    {
+      "name": "JS37_debounce_keeps_only_last_call",
+      "status": "PASS",
+      "milliseconds": 1.2131779999999992
+    },
+    {
+      "name": "JS38_password_toggle_algorithm_login_password",
+      "status": "PASS",
+      "milliseconds": 0.9584129999999789
+    },
+    {
+      "name": "JS39_password_toggle_algorithm_register_password",
+      "status": "PASS",
+      "milliseconds": 0.9246280000000127
+    },
+    {
+      "name": "JS40_password_toggle_algorithm_register_password_confirmation",
+      "status": "PASS",
+      "milliseconds": 0.5927829999999972
+    },
+    {
+      "name": "JS41_cart_display_sums_two_rows_after_quantity_change_or_removal",
+      "status": "PASS",
+      "milliseconds": 1.8935029999999813
+    },
+    {
+      "name": "JS42_cart_display_empty_rows_reset_total_and_ignore_incomplete_row",
+      "status": "PASS",
+      "milliseconds": 0.9343020000000024
+    }
+  ]
+}

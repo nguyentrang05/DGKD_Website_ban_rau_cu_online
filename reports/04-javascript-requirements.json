@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-10-24T00:04:07.012Z",
+  "node": "v22.20.0",
+  "suite": "requirements",
+  "environment": "Node VM with a minimal DOM adapter; not a real browser",
+  "project_root": "D:\\xampp\\htdocs\\Phan_tich_thiet_ke_phan_mem_N03_Nhom4",
+  "total": 1,
+  "passed": 0,
+  "failed": 1,
+  "results": [
+    {
+      "name": "JR01_unaccented_search_matches_accented_name_IF_required",
+      "status": "FAIL",
+      "milliseconds": 9.0489,
+      "message": "Needs accent normalization only IF this is the agreed requirement.\n\u001b[32m+ actual\u001b[39m \u001b[31m- expected\u001b[39m\n\n\u001b[32m+\u001b[39m []\n\u001b[31m-\u001b[39m [\n\u001b[31m-\u001b[39m   1\n\u001b[31m-\u001b[39m ]\n"
+    }
+  ]
+}

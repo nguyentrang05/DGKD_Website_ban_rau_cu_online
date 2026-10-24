@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="D:\xampp\htdocs\Phan_tich_thiet_ke_phan_mem_N03_Nhom4\phpunit.whitebox.extended.xml" tests="4" assertions="17" errors="0" failures="0" skipped="0" time="0.933251">
+    <testsuite name="ProductData" tests="4" assertions="17" errors="0" failures="0" skipped="0" time="0.933251">
+      <testsuite name="Tests\Feature\WhiteBox\ProductDataWhiteBoxTest" file="D:\xampp\htdocs\Phan_tich_thiet_ke_phan_mem_N03_Nhom4\tests\Feature\WhiteBox\ProductDataWhiteBoxTest.php" tests="4" assertions="17" errors="0" failures="0" skipped="0" time="0.933251">
+        <testcase name="test_PD01_catalogue_passes_real_fields_and_image_branches_to_javascript" file="D:\xampp\htdocs\Phan_tich_thiet_ke_phan_mem_N03_Nhom4\tests\Feature\WhiteBox\ProductDataWhiteBoxTest.php" line="7" class="Tests\Feature\WhiteBox\ProductDataWhiteBoxTest" classname="Tests.Feature.WhiteBox.ProductDataWhiteBoxTest" assertions="10" time="0.516521"/>
+        <testcase name="test_PD02_empty_catalogue_returns_empty_dataset" file="D:\xampp\htdocs\Phan_tich_thiet_ke_phan_mem_N03_Nhom4\tests\Feature\WhiteBox\ProductDataWhiteBoxTest.php" line="25" class="Tests\Feature\WhiteBox\ProductDataWhiteBoxTest" classname="Tests.Feature.WhiteBox.ProductDataWhiteBoxTest" assertions="2" time="0.016064"/>
+        <testcase name="test_PD03_existing_product_detail_can_be_opened" file="D:\xampp\htdocs\Phan_tich_thiet_ke_phan_mem_N03_Nhom4\tests\Feature\WhiteBox\ProductDataWhiteBoxTest.php" line="32" class="Tests\Feature\WhiteBox\ProductDataWhiteBoxTest" classname="Tests.Feature.WhiteBox.ProductDataWhiteBoxTest" assertions="4" time="0.303119"/>
+        <testcase name="test_PD04_missing_product_detail_returns_404" file="D:\xampp\htdocs\Phan_tich_thiet_ke_phan_mem_N03_Nhom4\tests\Feature\WhiteBox\ProductDataWhiteBoxTest.php" line="40" class="Tests\Feature\WhiteBox\ProductDataWhiteBoxTest" classname="Tests.Feature.WhiteBox.ProductDataWhiteBoxTest" assertions="1" time="0.097546"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

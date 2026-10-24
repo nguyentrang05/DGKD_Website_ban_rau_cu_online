@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true" cacheDirectory=".phpunit.cache/whitebox">
+    <testsuites>
+        <testsuite name="WhiteBoxCore">
+            <file>tests/Feature/WhiteBox/AuthWhiteBoxTest.php</file>
+            <file>tests/Feature/WhiteBox/CartWhiteBoxTest.php</file>
+        </testsuite>
+        <testsuite name="WhiteBoxDefects">
+            <file>tests/Feature/WhiteBox/CartValidationDefectTest.php</file>
+        </testsuite>
+        <testsuite name="RegistrationCore">
+            <file>tests/Feature/WhiteBox/RegisterWhiteBoxTest.php</file>
+        </testsuite>
+        <testsuite name="RegistrationRequirements">
+            <file>tests/Feature/WhiteBox/RegisterRequirementsTest.php</file>
+        </testsuite>
+        <testsuite name="AccountSecurity">
+            <file>tests/Feature/WhiteBox/AccountSecurityWhiteBoxTest.php</file>
+        </testsuite>
+        <testsuite name="CartManagement">
+            <file>tests/Feature/WhiteBox/CartManagementWhiteBoxTest.php</file>
+        </testsuite>
+        <testsuite name="CartRequirements">
+            <file>tests/Feature/WhiteBox/CartRequirementsTest.php</file>
+        </testsuite>
+        <testsuite name="ProductData">
+            <file>tests/Feature/WhiteBox/ProductDataWhiteBoxTest.php</file>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <file>app/Http/Controllers/AuthController.php</file>
+            <file>app/Http/Controllers/CartController.php</file>
+            <file>app/Http/Controllers/ProductController.php</file>
+            <file>app/Http/Middleware/AdminMiddleware.php</file>
+            <file>app/Http/Middleware/LoginMiddleware.php</file>
+            <file>app/Http/Middleware/AuthMiddleware.php</file>
+            <file>app/Models/Cart.php</file>
+            <file>app/Models/CartItem.php</file>
+            <file>app/Models/User.php</file>
+        </include>
+    </source>
+    <php>
+        <env name="APP_ENV" value="testing" force="true" />
+        <env name="APP_KEY" value="base64:MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI=" force="true" />
+        <env name="APP_MAINTENANCE_DRIVER" value="file" force="true" />
+        <env name="BCRYPT_ROUNDS" value="4" force="true" />
+        <env name="CACHE_STORE" value="array" force="true" />
+        <env name="DB_CONNECTION" value="sqlite" force="true" />
+        <env name="DB_DATABASE" value=":memory:" force="true" />
+        <env name="DB_URL" value="" force="true" />
+        <env name="MAIL_MAILER" value="array" force="true" />
+        <env name="QUEUE_CONNECTION" value="sync" force="true" />
+        <env name="SESSION_DRIVER" value="array" force="true" />
+        <env name="TELESCOPE_ENABLED" value="false" force="true" />
+        <env name="PULSE_ENABLED" value="false" force="true" />
+    </php>
+</phpunit>

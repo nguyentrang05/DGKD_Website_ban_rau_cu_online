@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-10-23T23:25:59.171Z",
+  "node": "v24.19.0",
+  "suite": "requirements",
+  "environment": "Node VM with a minimal DOM adapter; not a real browser",
+  "project_root": "/workspace/scratch/5a57bee9f61c/extended_source",
+  "total": 1,
+  "passed": 0,
+  "failed": 1,
+  "results": [
+    {
+      "name": "JR01_unaccented_search_matches_accented_name_IF_required",
+      "status": "FAIL",
+      "milliseconds": 4.364914999999996,
+      "message": "Needs accent normalization only IF this is the agreed requirement.\n+ actual - expected\n\n+ []\n- [\n-   1\n- ]\n"
+    }
+  ]
+}

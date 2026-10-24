@@ -1,0 +1,38 @@
+{
+  "source_archive": "Phan_tich_thiet_ke_phan_mem_N03_Nhom4(1).zip",
+  "source_sha256": {
+    "app/Http/Controllers/AuthController.php": "4b4090be604049e682e67db6eb4199d18ff5f0c697de872ac2eced674a38e60f",
+    "app/Http/Controllers/CartController.php": "cc40860ae35586e5db983847da30b0f1e70e1a1fe77ff694a1e50354b4103581",
+    "app/Http/Controllers/ProductController.php": "32a85614dfb2b675662d817b456a294423a39367f77ee8e14b839ee4f93e3607",
+    "app/Models/Cart.php": "0bf351be05be3e30b786b35b7601be2cfb6b36b8d2c7a1923653ad4eeee65dc1",
+    "routes/web.php": "b64229fcd2e2cc44466cfec1b682db7370c450ed34c5d8f524c0d99ee1b154e3",
+    "resources/views/products/index.blade.php": "7465c6ee10010132466e30a880079d92625e2bbbd8db4c8850a4c2e71cd8ac4b",
+    "resources/views/cart/index.blade.php": "b344d4c7a40ea9512c39c367e517e66a84efd252187a98428097e17e927efc4f",
+    "resources/views/auth/register.blade.php": "f4a6ec6fe2ff28eb79354fc435d9c4259eb8c842702cb302cce0be6543aed4bc",
+    "resources/views/auth/login.blade.php": "ec18248b6bf2d1012ca2f3641cf91319d15d7c52f31b4b9764576be823acbb06",
+    "resources/views/layouts/app.blade.php": "eb9642173857b029a7eaaeb1cb805f87e7690e805169a555f268baa5d384aec1"
+  },
+  "new_php_cases": 50,
+  "legacy_php_cases": 16,
+  "total_php_cases": 66,
+  "new_php_runtime_status": "NOT RUN: PHP CLI unavailable; run php -l and PHPUnit on the user machine",
+  "javascript_core": {
+    "total": 42,
+    "pass": 42,
+    "fail": 0,
+    "node": "v24.19.0"
+  },
+  "javascript_requirement": {
+    "total": 1,
+    "pass": 0,
+    "fail": 1,
+    "condition": "Unaccented input must match accented product names only if this is the agreed requirement"
+  },
+  "browser_status": "NOT RUN: real-browser checklist must be completed separately",
+  "checks": [
+    "All extended XML test paths resolve when overlay is installed",
+    "Selected source files match original uploaded ZIP",
+    "CFG node/edge counts validated",
+    "PNG diagrams visually inspected"
+  ]
+}

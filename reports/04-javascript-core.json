@@ -1,0 +1,222 @@
+{
+  "generated_at": "2026-10-24T00:03:56.881Z",
+  "node": "v22.20.0",
+  "suite": "core",
+  "environment": "Node VM with a minimal DOM adapter; not a real browser",
+  "project_root": "D:\\xampp\\htdocs\\Phan_tich_thiet_ke_phan_mem_N03_Nhom4",
+  "total": 42,
+  "passed": 42,
+  "failed": 0,
+  "results": [
+    {
+      "name": "JS01_no_filters_preserve_all_products",
+      "status": "PASS",
+      "milliseconds": 8.117500000000007
+    },
+    {
+      "name": "JS02_search_Cà rốt",
+      "status": "PASS",
+      "milliseconds": 2.267499999999984
+    },
+    {
+      "name": "JS03_search_rốt",
+      "status": "PASS",
+      "milliseconds": 2.251999999999981
+    },
+    {
+      "name": "JS04_search_RAU XANH",
+      "status": "PASS",
+      "milliseconds": 4.43719999999999
+    },
+    {
+      "name": "JS05_search_CÀ RỐT",
+      "status": "PASS",
+      "milliseconds": 2.426400000000001
+    },
+    {
+      "name": "JS06_search_khong-ton-tai",
+      "status": "PASS",
+      "milliseconds": 2.572800000000001
+    },
+    {
+      "name": "JS07_search_@",
+      "status": "PASS",
+      "milliseconds": 2.645099999999985
+    },
+    {
+      "name": "JS08_search_handler_trims_input_and_resets_page",
+      "status": "PASS",
+      "milliseconds": 76.12180000000004
+    },
+    {
+      "name": "JS09_search_handler_trims_input_and_resets_page",
+      "status": "PASS",
+      "milliseconds": 3.1351999999999975
+    },
+    {
+      "name": "JS10_category_filter",
+      "status": "PASS",
+      "milliseconds": 2.5167999999999893
+    },
+    {
+      "name": "JS11_price_boundary_0-50000",
+      "status": "PASS",
+      "milliseconds": 2.204399999999964
+    },
+    {
+      "name": "JS12_price_boundary_50000-100000",
+      "status": "PASS",
+      "milliseconds": 2.4506000000000085
+    },
+    {
+      "name": "JS13_price_boundary_100000-200000",
+      "status": "PASS",
+      "milliseconds": 2.8602000000000203
+    },
+    {
+      "name": "JS14_price_boundary_200000+",
+      "status": "PASS",
+      "milliseconds": 4.434399999999982
+    },
+    {
+      "name": "JS15_unknown_price_token_uses_existing_default_branch",
+      "status": "PASS",
+      "milliseconds": 2.877900000000011
+    },
+    {
+      "name": "JS16_combined_category_price_and_search",
+      "status": "PASS",
+      "milliseconds": 2.3758000000000266
+    },
+    {
+      "name": "JS17_combined_filters_no_matches",
+      "status": "PASS",
+      "milliseconds": 2.669399999999996
+    },
+    {
+      "name": "JS18_sort_price_asc",
+      "status": "PASS",
+      "milliseconds": 2.5545000000000186
+    },
+    {
+      "name": "JS19_sort_price_desc",
+      "status": "PASS",
+      "milliseconds": 2.4471000000000345
+    },
+    {
+      "name": "JS20_sort_popular",
+      "status": "PASS",
+      "milliseconds": 2.511099999999999
+    },
+    {
+      "name": "JS21_sort_latest",
+      "status": "PASS",
+      "milliseconds": 3.345899999999972
+    },
+    {
+      "name": "JS22_sort_unknown-sort",
+      "status": "PASS",
+      "milliseconds": 7.76419999999996
+    },
+    {
+      "name": "JS23_name_sort_orders_by_locale_compare",
+      "status": "PASS",
+      "milliseconds": 14.4529
+    },
+    {
+      "name": "JS24_product_card_contains_name_price_unit_image_and_detail_link",
+      "status": "PASS",
+      "milliseconds": 2.67999999999995
+    },
+    {
+      "name": "JS25_out_of_stock_card_is_disabled_with_fallback_image",
+      "status": "PASS",
+      "milliseconds": 2.1585000000000036
+    },
+    {
+      "name": "JS26_empty_results_with_filters_have_clear_button",
+      "status": "PASS",
+      "milliseconds": 3.182299999999998
+    },
+    {
+      "name": "JS27_empty_catalogue_without_filters_has_distinct_message",
+      "status": "PASS",
+      "milliseconds": 2.606299999999976
+    },
+    {
+      "name": "JS28_first_page_has_four_cards",
+      "status": "PASS",
+      "milliseconds": 2.7420999999999935
+    },
+    {
+      "name": "JS29_second_page_has_remaining_cards",
+      "status": "PASS",
+      "milliseconds": 2.486099999999965
+    },
+    {
+      "name": "JS30_pagination_hidden_for_one_page",
+      "status": "PASS",
+      "milliseconds": 2.112099999999998
+    },
+    {
+      "name": "JS31_pagination_multiple_pages_has_prev_next_and_ellipsis",
+      "status": "PASS",
+      "milliseconds": 2.366199999999992
+    },
+    {
+      "name": "JS32_page_navigation_accepts_valid_page_and_rejects_zero_or_too_large",
+      "status": "PASS",
+      "milliseconds": 3.5004000000000133
+    },
+    {
+      "name": "JS33_clear_filters_resets_controls_state_and_page",
+      "status": "PASS",
+      "milliseconds": 4.038599999999974
+    },
+    {
+      "name": "JS34_filter_controls_update_internal_state_and_reset_page",
+      "status": "PASS",
+      "milliseconds": 3.896599999999978
+    },
+    {
+      "name": "JS35_update_ui_filter_visibility_and_count",
+      "status": "PASS",
+      "milliseconds": 3.6777999999999906
+    },
+    {
+      "name": "JS36_loading_indicator_both_branches",
+      "status": "PASS",
+      "milliseconds": 2.386799999999994
+    },
+    {
+      "name": "JS37_debounce_keeps_only_last_call",
+      "status": "PASS",
+      "milliseconds": 2.6025999999999954
+    },
+    {
+      "name": "JS38_password_toggle_algorithm_login_password",
+      "status": "PASS",
+      "milliseconds": 2.680000000000007
+    },
+    {
+      "name": "JS39_password_toggle_algorithm_register_password",
+      "status": "PASS",
+      "milliseconds": 2.759800000000041
+    },
+    {
+      "name": "JS40_password_toggle_algorithm_register_password_confirmation",
+      "status": "PASS",
+      "milliseconds": 1.9857999999999834
+    },
+    {
+      "name": "JS41_cart_display_sums_two_rows_after_quantity_change_or_removal",
+      "status": "PASS",
+      "milliseconds": 4.043999999999983
+    },
+    {
+      "name": "JS42_cart_display_empty_rows_reset_total_and_ignore_incomplete_row",
+      "status": "PASS",
+      "milliseconds": 2.324299999999994
+    }
+  ]
+}
