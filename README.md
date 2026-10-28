@@ -6,8 +6,6 @@ Dự án bài tập lớn học phần **Đánh giá và kiểm định chất l
 
 ![Trang chủ website](docs/images/website-home.png)
 
-> Dự án phục vụ học tập và kiểm thử. Một số chức năng còn thiếu hoặc có lỗi được trình bày tại mục **Các vấn đề đã biết**.
-
 ## Mục lục
 
 - [1. Thông tin đề tài](#1-thông-tin-đề-tài)
