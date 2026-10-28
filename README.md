@@ -4,7 +4,7 @@ Dự án bài tập lớn học phần **Đánh giá và kiểm định chất l
 
 Đề tài tập trung phân tích yêu cầu, xây dựng kế hoạch kiểm thử, thiết kế test case, thực thi và đánh giá chất lượng website bán rau củ quả trực tuyến.
 
-![Trang chủ website](docs/images/website-home.png)
+<img src="public/images/trangchu.jpg">
 
 ## Mục lục
 
