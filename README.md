@@ -51,7 +51,8 @@ Dự án bài tập lớn học phần **Đánh giá và kiểm định chất l
 
 Website có ba nhóm tác nhân: **khách truy cập**, **khách hàng** và **quản trị viên**.
 
-![Biểu đồ Use Case tổng quát](docs/images/use-case-overview.png)
+** Biểu đồ usecase tổng quát**
+<img src="public/images/usecase_tq.jpg">
 
 *Biểu đồ trích từ báo cáo, mô tả phạm vi yêu cầu. Một số chức năng trong thiết kế chưa được triển khai đầy đủ.*
 
@@ -242,11 +243,9 @@ DGKD_Website_ban_rau_cu_online/
 
 - Git.
 - PHP từ 8.2.
-- Composer 2.
-- Các extension PHP theo yêu cầu Composer, gồm PDO SQLite, SQLite3, DOM/XML và Mbstring.
-- Node.js và npm nếu chạy kiểm thử JavaScript hoặc sử dụng Vite.
+- Composer
 - Kết nối Internet để tải thư viện CDN trên giao diện.
-
+- Xampp
 ### 6.2. Tải mã nguồn
 
 ```bash
@@ -269,62 +268,29 @@ php artisan key:generate
 
 Cập nhật `.env`:
 
-```dotenv
-APP_NAME="Rau Cu Qua Online"
-APP_ENV=local
-APP_DEBUG=true
-APP_URL=http://127.0.0.1:8000
-
-DB_CONNECTION=sqlite
-SESSION_DRIVER=database
-CACHE_STORE=file
-QUEUE_CONNECTION=sync
 ```
-
-Giữ `DB_DATABASE` chưa khai báo để sử dụng đường dẫn SQLite mặc định. Nếu đã khai báo, đặt thành đường dẫn tuyệt đối tới `database/database.sqlite`.
-
-Cấu hình cache bằng file và queue đồng bộ phù hợp chạy local vì repository hiện chưa có migration tạo bảng cache/jobs.
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=rau_cu_qua_online
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
 ### 6.5. Tạo cơ sở dữ liệu
 
 Chạy trên cơ sở dữ liệu mới:
 
 ```bash
-php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
-php artisan config:clear
+
 php artisan migrate --seed
 php artisan storage:link
 ```
 
 **Lưu ý:**
+- Mở phpMyAdmin tạo database rau_cu_qua_online sau đó chạy các lệnh trên
 
-- Seeder tạo tài khoản, danh mục, sản phẩm và giỏ hàng mẫu.
-- `DatabaseSeeder` hiện chưa gọi `OrderSeeder`.
-- Không chạy lặp lại seeder trên cùng dữ liệu vì có thể trùng email hoặc các trường duy nhất.
-
-### 6.6. Lưu ý khi chạy trên Linux
-
-Trong `routes/web.php`, tên `Authcontroller` chưa khớp chữ hoa/thường với file và lớp `AuthController`.
-
-Cần thống nhất import và các tham chiếu:
-
-```php
-use App\Http\Controllers\AuthController;
-
-Route::get('/login', [AuthController::class, 'login'])
-    ->name('login');
-```
-
-Áp dụng tương tự cho các route đăng ký, đăng nhập và đăng xuất, sau đó chạy:
-
-```bash
-composer dump-autoload
-php artisan route:clear
-```
-
-Nếu kiểm thử source nguyên trạng, lưu riêng kết quả trước và sau khi sửa lỗi này.
-
-### 6.7. Khởi động website
+### 6.6. Khởi động website
 
 ```bash
 php artisan serve
@@ -332,14 +298,6 @@ php artisan serve
 
 Truy cập: **http://127.0.0.1:8000**
 
-Các layout chính sử dụng Bootstrap qua CDN và tài nguyên công khai. Khi cần biên dịch tài nguyên Vite:
-
-```bash
-npm install
-npm run build
-```
-
-Hoặc chạy `npm run dev` trong terminal riêng khi phát triển.
 
 ### 6.8. Tài khoản mẫu
 
@@ -393,7 +351,7 @@ Phạm vi gồm đăng nhập, đăng ký, hồ sơ, giỏ hàng và đơn hàng
 php vendor/bin/phpunit -c phpunit.blackbox.xml --testdox --log-junit reports/blackbox-rerun.xml
 ```
 
-Hai cấu hình kiểm thử PHP chuyên biệt sử dụng SQLite trong bộ nhớ (`:memory:`), session/cache dạng array và dữ liệu tạo riêng theo test.
+Hai cấu hình kiểm thử PHP chuyên biệt sử dụng MySQL trong bộ nhớ (`:memory:`), session/cache dạng array và dữ liệu tạo riêng theo test.
 
 ### 7.3. Kiểm thử JavaScript
 
@@ -426,17 +384,17 @@ Báo cáo mô tả kịch bản cho bốn nhóm chức năng:
 - Đăng nhập.
 - Quản lý giỏ hàng.
 
-#### Tìm kiếm sản phẩm
+#### Kiểm thử tìm kiếm bằng Selenium IDE
 
-![Kiểm thử tìm kiếm bằng Selenium IDE](docs/images/selenium-search.png)
+<img src="public/images/tìm kiếm.jpg">
 
-#### Giỏ hàng
+#### Kiểm thử thêm sản phẩm vào giỏ hàng bằng Selenium
 
-![Kiểm thử giỏ hàng bằng Selenium IDE](docs/images/selenium-cart.png)
+<img src="public/images/them_sp.png">
 
-#### Xóa sản phẩm
+#### Kiểm thử xóa sản phẩm bằng Selenium
 
-![Kiểm thử giỏ hàng trống](docs/images/selenium-empty-cart.png)
+<img src="public/images/xoa_sp.png">
 
 Repository hiện chưa có file dự án Selenium IDE `.side`; cần bổ sung để người khác phát lại các kịch bản.
 
