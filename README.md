@@ -2,6 +2,8 @@
 
 Dự án bài tập lớn học phần **Đánh giá và kiểm định chất lượng phần mềm**, Trường Công nghệ thông tin, Đại học Phenikaa.
 
+Link thuyết trình demo: https://drive.google.com/drive/folders/1XsBKgsfzk1_MsPgBhq9pVQHhI8fd1kLh?usp=sharing
+
 Đề tài tập trung phân tích yêu cầu, xây dựng kế hoạch kiểm thử, thiết kế test case, thực thi và đánh giá chất lượng website bán rau củ quả trực tuyến.
 
 <img src="public/images/trangchu.jpg">
